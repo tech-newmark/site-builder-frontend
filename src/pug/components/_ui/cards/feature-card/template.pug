@@ -1,0 +1,7 @@
+mixin feature-card(data)
+  .feature-card(class= data.modifiers ? data.modifiers : null style= data.bg ? `background-image: url('./assets/img/${data.bg}.png')` : null)
+    .feature-card__wrapper
+      if data.icon
+        img(src="./assets/img/icon-feature.svg" alt!= data.title width="32" height="32")
+      span.base-subtitle!= data.title
+      span.base-text!= data.text

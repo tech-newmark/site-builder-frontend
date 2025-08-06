@@ -1,0 +1,28 @@
+include ../../components/_ui/cards/feature-card/template
+.features__grid-container
+  .features__grid.features__grid--type-2
+    .features__grid-item
+      +feature-card({
+        title: 'Полный дизайн интерьера',
+        text: 'Разработка концепции, планировка, подбор материалов и мебели.',
+        bg: 'features-mock-img',
+      })
+    .features__grid-item
+      +feature-card({
+        title: '3D визуализация2',
+        text: 'Создание реалистичных 3D моделей вашего будущего интерьера.',
+
+      })
+    .features__grid-item
+      +feature-card({
+        title: 'Ремонт и отделка',
+        text: 'Комплексный ремонт под ключ с использованием качественных материалов.',
+
+      })
+    .features__grid-item
+      +feature-card({
+        title: 'Экологичность',
+        text: 'Жилой комплекс расположен в зелёной зоне, поблизости есть парки и водоёмы, что обеспечивает чистый воздух и возможность наслаждаться природой.',
+        bg: 'features-mock-img',
+        modifiers: '--content-position-center'
+      })

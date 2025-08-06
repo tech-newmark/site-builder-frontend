@@ -1,0 +1,11 @@
+.table-wrapper {
+  overflow: hidden;
+  width: 100%;
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+  }
+}

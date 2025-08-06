@@ -1,0 +1,26 @@
+
+include ../../cards/staff-preview-card/template
+include ../../cards/review-card/template
+
+mixin main-slider (data)
+
+  .swiper-container
+    .swiper.main-slider(class= data.mainSliderModifiers ? data.mainSliderModifiers : null)
+      .swiper-wrapper
+        each item, index in data.content
+          .swiper-slide
+            if data.type === 'staff-preview-slider'
+              +staff-preview-card(item)
+
+            if data.type === 'review-card-slider'
+              +review-card(item, index)(class=  data.itemsModifiers ? data.itemsModifiers : null)
+            //- .staff-preview-card.--bordered.--rounded.--content-align-center.--bordered.--circle-view-pictue.--algn-center
+            //-   .staff-preview-card__picture
+            //-     img(src=`./assets/img/${item.img}` alt="staff-preview-card" width="400" height="300")
+            //-   .staff-preview-card__content
+            //-     span.base-text.staff-preview-card__content-title!= item.title
+            //-     small.staff-preview-card__content-description!=item.note
+
+            //-     span.base-text.staff-preview-card__content-text!=item.text
+    include ../../swiper/swiper-navigation
+    include ../../swiper/swiper-pagination

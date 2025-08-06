@@ -1,0 +1,26 @@
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.button-row {
+	@extend %flex-align;
+
+	flex-wrap: wrap;
+	gap: clamp(16px, 3vw, 24px);
+	margin-top: 36px;
+	margin-bottom: 36px;
+	width: 100%;
+	max-width: 680px;
+	box-sizing: border-box;
+	container: button-row / inline-size;
+
+	& > * {
+		flex-grow: 1;
+
+		@include container-up("button-row", 475px) {
+			max-width: calc(50% - clamp(16px, 3vw, 24px));
+		}
+	}
+}

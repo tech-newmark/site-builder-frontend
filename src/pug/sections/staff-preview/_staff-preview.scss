@@ -1,0 +1,121 @@
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+@use "@pug/components/_ui/cards/staff-preview-card/staff-preview-card";
+
+.staff-preview {
+  container: staff-preview / inline-size;
+
+  // view modifiers start
+  &.--grid-type-1 {
+    .staff-preview__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap-lg);
+
+      @include container-up("staff-preview", $tablet-lg-width) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  &.--grid-type-2 {
+    .staff-preview__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap-lg);
+
+      @include container-up("staff-preview", $tablet-lg-width) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
+  &.--grid-type-3 {
+    .swiper-container {
+      position: relative;
+
+      &:has(.swiper-pagination) {
+        padding-bottom: 30px;
+      }
+
+      .swiper-pagination {
+        bottom: 0;
+        padding: 0 60px;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .swiper-button-prev {
+        left: 0;
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      .swiper-button-next {
+        right: 0;
+      }
+
+      @include media-up($mobile-width) {
+        &:has(.swiper-button-prev),
+        &:has(.swiper-button-next) {
+          padding-left: 60px;
+          padding-right: 60px;
+
+          .swiper-button-next,
+          .swiper-button-prev {
+            display: flex;
+          }
+        }
+      }
+    }
+
+    &:has(.main-slider:not(.--js--auto-fill)) .swiper-container {
+      max-width: 320px;
+      margin: 0 auto;
+
+      @include media-up($mobile-width) {
+        max-width: 440px;
+      }
+
+      @include media-up(680px) {
+        max-width: 780px;
+      }
+
+      @include media-up(1024px) {
+        max-width: 1120px;
+      }
+    }
+
+    .main-slider {
+      .swiper-wrapper {
+        padding-bottom: 5px;
+      }
+
+      .swiper-slide {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+      }
+    }
+
+    .staff-preview-card {
+      max-width: 320px;
+      height: 100%;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+      margin: 2px;
+    }
+  }
+
+  // view modifiers end
+}

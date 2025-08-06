@@ -1,0 +1,12 @@
+extends ../../layouts/base-section/template
+
+block variables
+  - sectionClass = 'faq --horizontal-view'
+  - sectionTitle = 'Часто задаваемые вопросы'
+  - sectionText  = 'Этот блок поможет вам быстро найти ответы на свои вопросы'
+
+block content
+  include ./content
+  include ../../components/_ui/accordeon/template
+
+  +accordeon(data)

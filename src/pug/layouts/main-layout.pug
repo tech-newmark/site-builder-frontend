@@ -1,0 +1,17 @@
+include ./main-head
+
+doctype html
+
+block variables
+
+html(lang="ru")
+ +main-head(title, description)
+
+include ./header/template
+
+main.--section-headers-underlined
+  block content
+
+include ./footer/template
+
+block modals

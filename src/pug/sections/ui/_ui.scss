@@ -1,0 +1,140 @@
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.ui {
+	container: ui / inline-size;
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr;
+		border-top: 1px solid var(--primary-color);
+		border-bottom: 1px solid var(--primary-color);
+
+		@include container-up("ui", $tablet-width) {
+			gap: 30px;
+			grid-template-columns: max-content auto;
+		}
+	}
+
+	&__content,
+	&__sidebar {
+		@extend %flex-column;
+
+		gap: 10px;
+		padding: 20px;
+	}
+
+	&__sidebar {
+		position: sticky;
+		top: 0;
+		height: fit-content;
+		background-color: var(--site-bg-color);
+
+		@include container-down("ui", $tablet-width) {
+			border-left: 1px solid var(--primary-color);
+			border-right: 1px solid var(--primary-color);
+			border-bottom: 1px solid var(--primary-color);
+		}
+
+		.btn.active {
+			opacity: 0.4;
+			pointer-events: none;
+		}
+	}
+
+	&__content {
+		border-left: 1px solid var(--primary-color);
+
+		@include container-down("ui", $tablet-width) {
+			border-right: 1px solid var(--primary-color);
+		}
+	}
+
+	&__section {
+		& > .base-subtitle:first-child {
+			text-decoration: underline;
+			margin-bottom: 20px;
+			color: var(--dark-color);
+		}
+
+		&-field {
+			@extend %flex-column;
+
+			gap: 12px;
+
+			&:not(:last-child) {
+				margin-bottom: 40px;
+			}
+
+			&--typography {
+				gap: 0;
+			}
+
+			&--color-pallete {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
+				div {
+					@extend %flex-center;
+
+					height: 80px;
+					font-weight: 600;
+					color: var(--white-color);
+					border-radius: var(--border-radius-xs);
+
+					&.bg-white {
+						color: var(--black-color);
+					}
+				}
+
+				span {
+					padding: 3px 6px;
+
+					&.color-white {
+						background-color: var(--black-color);
+						border-radius: var(--border-radius-xs);
+					}
+				}
+			}
+
+			&-grid {
+				@extend %flex-wrap;
+
+				gap: 20px;
+			}
+		}
+	}
+}
+
+.typography {
+	&-section {
+		&:not(:last-child) {
+			padding-bottom: 20px;
+			margin-bottom: 30px;
+			border-bottom: 1px solid var(--primary-color);
+		}
+
+		&__title {
+			text-decoration: underline;
+		}
+
+		&--montserrat * {
+			font-family: var(--montserrat);
+		}
+
+		&--manrope * {
+			font-family: var(--manrope);
+		}
+
+		&--roboto * {
+			font-family: var(--roboto);
+		}
+
+		&--inter * {
+			font-family: var(--inter);
+		}
+	}
+}

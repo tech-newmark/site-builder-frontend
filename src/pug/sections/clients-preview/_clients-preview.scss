@@ -1,0 +1,64 @@
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+@use "@pug/components/_ui/sliders/infinity-row-slider/infinity-row-slider" as *;
+
+.clients-preview {
+	&__grid {
+		@extend %flex-wrap;
+
+		gap: 8px;
+
+		&.--align-center {
+			justify-content: center;
+		}
+
+		&-item {
+			@extend %flex-center;
+
+			padding: clamp(16px, 3vw, 32px) 24px;
+			border-radius: var(--current-border-radius);
+			min-height: 100px;
+			flex-grow: 1;
+			width: 100%;
+
+			@include container-up("main", $mobile-width) {
+				min-width: calc(100% / 3 - 16px);
+				max-width: calc(100% / 3 - 16px);
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+				max-height: 40px;
+				object-fit: contain;
+			}
+		}
+
+		&.--icon-size-md {
+			.clients-preview__grid-item img {
+				max-height: 60px;
+			}
+		}
+
+		&.--icon-size-lg {
+			.clients-preview__grid-item img {
+				max-height: 80px;
+			}
+		}
+
+		&.--filled-bg {
+			.clients-preview__grid-item {
+				background-color: var(--lighter-color);
+			}
+		}
+
+		&.--bordered {
+			.clients-preview__grid-item {
+				border: 1px solid var(--lighter-color);
+			}
+		}
+	}
+}

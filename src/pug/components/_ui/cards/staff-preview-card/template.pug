@@ -1,0 +1,10 @@
+mixin staff-preview-card(data)
+
+  .staff-preview-card
+    .staff-preview-card__picture
+      img(src=`./assets/img/${data.img}` alt="staff-preview-card" width="400" height="300")
+    .staff-preview-card__content
+      span.base-text.staff-preview-card__content-title!=data.title
+      small.staff-preview-card__content-description!=data.note
+
+      span.base-text.staff-preview-card__content-text!=data.text

@@ -1,0 +1,12 @@
+mixin accordeon(data)
+  ul.accordeon(class=data.modifiers ? data.modifiers : null)
+    each item in data.items
+      li.accordeon__item
+        .accordeon__item-header(tabindex='0' aria-label="Развернуть" role="button")
+          span.base-text!=item.title
+          svg(width='24' height='24' aria-hidden='true')
+            use(xlink:href='./assets/sprite.svg#cross')
+        .accordeon__item-body
+          .content-block
+            p!=item.text
+

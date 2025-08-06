@@ -1,0 +1,21 @@
+extends ../../layouts/base-section/template
+
+
+block variables
+  - sectionClass = 'reviews'
+  - sectionTitle = 'Отзывы'
+  - sectionText = 'Наши клиенты делятся своими впечатлениями и результатами работы.'
+
+block content
+  include ../../components/_ui/sliders/main-slider/template
+  include ./reviews_content
+
+  +main-slider({
+    type:"review-card-slider",
+    mainSliderModifiers: "reviews-slider --max-slides-3",
+    itemsModifiers: "--bordered --rounded --content-align-center --content-align-center --no-ating",
+    content: reviews,
+  })
+
+
+

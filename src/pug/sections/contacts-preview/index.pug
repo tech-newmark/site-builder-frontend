@@ -1,0 +1,28 @@
+extends ../../layouts/base-section/template
+
+block variables
+  - sectionClass = 'contacts-preview --horizontal-view --items-alig-center --fulwidth-content' 
+  - sectionTitle = 'Наши контакты'
+  - sectionText  = 'Мы ценим ваше время и стремимся к быстрому и эффективному взаимодействию. Свяжитесь с нами, и вы получите профессиональную консультацию в кратчайшие сроки.'
+
+block content
+  .contacts-preview__grid
+    .contacts-preview__grid-item.contacts-preview__grid-item--content
+      .contact-preview-item
+        svg(width='24' height='24' aria-hidden='true')
+          use(xlink:href='./assets/sprite.svg#icon-phone')
+        strong Телефоны для связи
+        a(href="tel:+78120000000") +7 (812) 000-00-00
+        a(href="tel:+78120000000") +7 (921) 000-00-00
+      .contact-preview-item
+        svg(width='24' height='24' aria-hidden='true')
+          use(xlink:href='./assets/sprite.svg#icon-mail')
+        strong Эл.почта
+        a(href="mailto:tech@nmark.ru") info@nmark.ru
+      .contact-preview-item
+        svg(width='24' height='24' aria-hidden='true')
+          use(xlink:href='./assets/sprite.svg#icon-pin')
+        strong Адрес
+        address Санкт-Петербург, ул. парфеновская 12к2, офис 204
+    .contacts-preview__grid-item.contacts-preview__grid-item--map
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afa988e66df382c0ebbbf4b77b10666b8441a7078ec2a3c35a543cefa20ce03b6&amp;width=100%25&amp;height=440&amp;lang=ru_RU&amp;scroll=false"></script>

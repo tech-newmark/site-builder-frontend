@@ -1,0 +1,267 @@
+@forward "@styles/_extends/flexbox";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_vars/scoped" as *;
+@use "@styles/_mixins/block-overlay" as *;
+
+$top-banner-offset-vertical: clamp(32px, 4vw, 84px);
+$top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
+
+.top-banner {
+  @extend %flex-align;
+
+  padding: $top-banner-offset-vertical $top-banner-offset-horizontal;
+  gap: clamp(24px, 4vw, 64px);
+  height: 100%;
+  background-size: cover;
+
+  // модификаторы для направления расположения контента баннера начало
+  &.--dir-rtl {
+    flex-direction: row-reverse;
+  }
+
+  // модификаторы для направления расположения контента баннера конец
+
+  // модификаторы для подложки начало
+  &.--overlayed-dark {
+    @include block-overlay("dark");
+  }
+
+  &.--overlayed-light {
+    @include block-overlay("light");
+  }
+
+  &.--overlayed-blured {
+    @include block-overlay("blured");
+  }
+
+  // модификаторы для подложки конец
+
+  // модификаторы для фоновой картинки начало
+  &.--bg-top-left {
+    background-position: top left;
+  }
+
+  &.--bg-top-center {
+    background-position: top center;
+  }
+
+  &.--bg-top-right {
+    background-position: top right;
+  }
+
+  &.--bg-bottom-left {
+    background-position: bottom left;
+  }
+
+  &.--bg-bottom-center {
+    background-position: bottom center;
+  }
+
+  &.--bg-bottom-right {
+    background-position: bottom right;
+  }
+
+  &.--bg-center-left {
+    background-position: center left;
+  }
+
+  &.--bg-center-right {
+    background-position: center right;
+  }
+
+  &.--bg-center-center {
+    background-position: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+    padding: clamp(24px, 5vw, 80px);
+    text-wrap: balance;
+    overflow: hidden;
+    z-index: 3;
+
+    // модификаторы для контентной области начало
+    &:not(.--fullwidth-content) {
+      max-width: 1140px;
+
+      @include container-up("top-banner-slider", 1200px) {
+        width: 75%;
+      }
+    }
+
+    &.--content-align-left {
+      text-align: left;
+
+      .button-row {
+        margin-right: auto;
+        margin-bottom: 0;
+      }
+    }
+
+    &.--content-align-center {
+      text-align: center;
+
+      .button-row {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+        justify-content: center;
+      }
+    }
+
+    &.--content-align-right {
+      text-align: right;
+
+      .button-row {
+        margin-left: auto;
+        margin-bottom: 0;
+        justify-content: flex-end;
+      }
+    }
+
+    &.--blured-content {
+      backdrop-filter: blur(20px);
+    }
+
+    &.--bordered-content {
+      border: 2px solid var(--primary-color);
+    }
+
+    &.--rounded-content {
+      border-radius: var(--current-border-radius);
+    }
+
+    &.--content-position-left {
+      margin-left: 0;
+    }
+
+    // модификаторы для контентной области конец
+  }
+
+  &__picture {
+    display: flex;
+    overflow: hidden;
+
+    &:not(.--fullheight-picture) {
+      max-height: 640px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include container-down("top-banner-slider", 1201px) {
+      display: none;
+    }
+
+    // модификаторы для области с контентным изображением начало
+    &.--rounded-picture {
+      overflow: hidden;
+      border-radius: var(--current-border-radius);
+    }
+
+    &.--fullheight-picture {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      z-index: 1;
+
+      img {
+        width: auto;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+
+    // модификаторы для области с контентным изображением конец
+  }
+
+  // модификаторы для фоновой картинки конец
+  &:has(.top-banner__picture):not(:has(.--fullheight-picture)) {
+    .top-banner__picture,
+    .top-banner__content {
+      @include container-up("top-banner-slider", 1200px) {
+        flex-basis: 50%;
+      }
+    }
+  }
+}
+
+.top-banner-slider {
+  @extend %flex-column;
+
+  height: 100%;
+  container: top-banner-slider / inline-size;
+
+  // глобальные модификаторы для всех слайдов начало
+  &.--fullheight {
+    .top-banner {
+      min-height: 90svh;
+    }
+  }
+
+  &.--height-30 {
+    .top-banner {
+      min-height: 30svh;
+    }
+  }
+
+  &.--height-50 {
+    .top-banner {
+      min-height: 50svh;
+    }
+  }
+
+  &.--height-70 {
+    .top-banner {
+      min-height: 70svh;
+    }
+  }
+
+  // глобальные модификаторы для всех слайдов конец
+
+  // навигация
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    @extend %flex-center;
+
+    position: absolute;
+    top: 50%;
+  }
+
+  .swiper-button-prev {
+    left: clamp(16px, 4vw, 64px);
+    transform: translateY(-50%) translateX(-50%) rotate(180deg);
+  }
+
+  .swiper-button-next {
+    right: clamp(16px, 4vw, 64px);
+    transform: translateY(-50%) translateX(50%);
+  }
+
+  // пагинация слайдера
+  .swiper-pagination {
+    padding: 20px 0;
+  }
+
+  .swiper-pagination:not(
+      .swiper-pagination-bullets-dynamic
+    ).--pagination-bullets-rectangle-wide {
+    padding: 5px $top-banner-offset-horizontal;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+}

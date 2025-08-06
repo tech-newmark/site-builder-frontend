@@ -1,0 +1,8 @@
+include ../../components/_ui/cards/staff-preview-card/template
+include ./staff-preview-content
+
+.staff-preview__grid
+  each item in staffPreview
+    .staff-preview__grid-item
+      .staff-preview-card-container
+        +staff-preview-card(item)

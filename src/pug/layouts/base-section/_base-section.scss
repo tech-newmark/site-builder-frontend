@@ -1,0 +1,80 @@
+@forward "@styles/_extends/flexbox";
+
+$base-section-offset: clamp(32px, 4vw, 64px);
+$base-section-header-offset: clamp(20px, 3vw, 28px);
+
+.base-section {
+	padding: calc($base-section-offset / 2) 0;
+
+	&__header {
+		position: relative;
+
+		@extend %flex-column;
+
+		align-items: center;
+		text-align: center;
+		gap: $base-section-header-offset;
+		margin-bottom: $base-section-offset;
+
+		& * {
+			margin-bottom: 0;
+		}
+
+		.base-title {
+			color: var(--section-title-color);
+		}
+
+		.base-text {
+			max-width: 1140px;
+		}
+	}
+}
+
+body:has(.--section-headers-align-left) {
+	.base-section__header {
+		@extend %flex-column;
+
+		text-align: left;
+		align-items: flex-start;
+	}
+}
+
+body:has(.--section-headers-align-right) {
+	.base-section__header {
+		@extend %flex-column;
+
+		text-align: right;
+		align-items: flex-end;
+	}
+}
+
+body:has(.--section-headers-underlined) {
+	.base-section__header {
+		padding-bottom: $base-section-header-offset;
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			content: "";
+			transform: translateX(-50%);
+			width: 160px;
+			max-width: 30vw;
+			height: 4px;
+			background-color: var(--title-underline-color);
+		}
+	}
+}
+
+body:has(.--section-headers-underlined.--section-headers-align-left)
+	.base-section__header::after {
+	left: 0;
+	transform: none;
+}
+
+body:has(.--section-headers-underlined.--section-headers-align-right)
+	.base-section__header::after {
+	left: revert;
+	right: 0;
+	transform: none;
+}

@@ -1,0 +1,139 @@
+@forward "@styles/_extends/flexbox";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_vars/scoped" as *;
+@use "@styles/_mixins/block-overlay" as *;
+
+.feature-card {
+	@extend %flex-column;
+
+	height: 100%;
+	padding: 32px;
+	color: var(--dark-color);
+	border-radius: var(--current-border-radius);
+	container: feature-card / inline-size;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+
+	.base-subtitle {
+		margin: 0;
+	}
+
+	&__wrapper {
+		@extend %flex-column;
+
+		gap: 24px;
+
+		img {
+			width: fit-content;
+			max-width: 80%;
+			height: auto;
+			max-height: 36px;
+			object-fit: contain;
+		}
+
+		.base-subtitle {
+			color: var(--feature-card-title-color);
+		}
+	}
+
+	&.--bordered {
+		&-primary {
+			border-color: var(--primary-color);
+			border-style: solid;
+		}
+
+		&-secondary {
+			border-color: var(--secondary-color);
+			border-style: solid;
+		}
+	}
+
+	&.--border-width {
+		&-xs {
+			border-width: 1px;
+		}
+
+		&-sm {
+			border-width: 2px;
+		}
+
+		&-md {
+			border-width: 4px;
+		}
+
+		&-lg {
+			border-width: 6px;
+		}
+
+		&-xl {
+			border-width: 8px;
+		}
+
+		&-xxl {
+			border-width: 10px;
+		}
+	}
+
+	&.--content-position {
+		&-bottom {
+			.feature-card__wrapper {
+				margin-top: auto;
+			}
+		}
+
+		&-center {
+			.feature-card__wrapper {
+				margin: auto 0;
+			}
+		}
+	}
+
+	&.--content-color {
+		&-light {
+			color: var(--white-color);
+		}
+
+		&-dark {
+			color: var(--black-color);
+		}
+	}
+
+	&.--content-align {
+		&-right {
+			text-align: right;
+
+			.feature-card__wrapper {
+				align-items: flex-end;
+			}
+		}
+
+		&-center {
+			text-align: center;
+
+			.feature-card__wrapper {
+				align-items: center;
+			}
+		}
+	}
+
+	&.--filled-bg {
+		&-primary {
+			background-color: var(--primary-color);
+		}
+
+		&-secondary {
+			background-color: var(--secondary-color);
+		}
+	}
+
+	&.--overlayed-dark {
+		@include block-overlay;
+	}
+
+	&.--overlayed-light {
+		@include block-overlay("light");
+	}
+}

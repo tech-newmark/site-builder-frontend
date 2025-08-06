@@ -1,0 +1,115 @@
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.contact-preview-item {
+  @extend %flex-column;
+
+  gap: 4px;
+  height: fit-content;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-color);
+    margin-bottom: 8px;
+  }
+
+  strong {
+    display: inline-block;
+    font-weight: 600;
+    min-height: 40px;
+  }
+
+  a,
+  address {
+    font-size: 16px;
+  }
+}
+
+.contacts-preview {
+  container: contacts-preview-container / inline-size;
+
+  @include container-up("contacts-preview-container", $laptop-lg-width) {
+    &.--horizontal-view > .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap-lg);
+
+      .base-section__header {
+        position: sticky;
+        top: 0;
+        align-self: start;
+        align-items: flex-start;
+        text-align: left;
+
+        &::after {
+          left: 0;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    container: contacts-preview-grid / inline-size;
+
+    &-item {
+      &--content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: fit-content;
+
+        .contact-preview-item {
+          max-width: 320px;
+        }
+
+        @include container-up("contacts-preview-grid", 640px) {
+          grid-template-columns: repeat(3, 1fr);
+          margin: 0 auto;
+
+          .contact-preview-item {
+            align-items: center;
+            text-align: center;
+          }
+        }
+      }
+
+      &--map {
+        height: 100%;
+        background-color: var(--lighter-color);
+      }
+    }
+  }
+
+  &.--items-align-center {
+    .contacts-preview__grid-item--content {
+      margin: 0 auto;
+    }
+
+    .contact-preview-item {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &:not(.--horizontal-view) {
+    &:not(.--fullwidth-content) .contacts-preview__grid-item--content {
+      max-width: fit-content;
+    }
+
+    &.--fullwidth-content .contacts-preview__grid-item--content {
+      width: 100%;
+
+      .contact-preview-item {
+        max-width: 100%;
+      }
+    }
+  }
+}

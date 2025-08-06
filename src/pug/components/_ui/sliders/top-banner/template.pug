@@ -1,0 +1,79 @@
+//- +top-banner({
+//-   options: {
+//-     navigation: {
+//-       enabled: Boolean
+//-       modifiers: '**классы-модификаторы для навигации**',
+//-     },
+//-     pagination: {
+//-       enabled: Boolean,
+//-       dynamicBullets: Boolean,
+//-       modifiers: '**классы-модификаторы для пагинации**',
+//-     },
+//-   }
+//-   items: [
+//-     {
+//-       modifiers: '**классы-модификаторы для элемента**',
+//-       title: {
+//-         tag: '**тег заголовка**',
+//-         text: '**текст заголовка**'
+//-       },
+//-       description: {
+//-         text: '**текст описания**'
+//-       },
+//-       background: {
+//-         path: '**путь к фоновой картинке элемента**',
+//-       },
+//-     }
+//-   ]
+//- })
+
+include ../../buttons/btn/btn
+
+mixin top-banner-slider(data) 
+  .swiper.top-banner-slider(
+    class= data.options.modifiers ? data.options.modifiers : null 
+  )
+    .swiper-wrapper
+      each item in data.items
+        .swiper-slide
+          .top-banner(
+            class= item.modifiers ? item.modifiers : null 
+            style= item.background ? `background-image: url('../assets/img/${item.background.path}')` : null
+          )
+            .top-banner__content(class= item.content.modifiers ? item.content.modifiers : null)
+              #{item.title.tag}.main-title(
+                class= item.title.modifiers ? item.title.modifiers : null
+              )!= item.title.text
+              p.top-banner__text(
+                class= item.description.modifiers ? item.description.modifiers : null
+              )!= item.description.text
+
+              .button-row
+                +btn({
+                  tag: 'button',
+                  title: 'Получить бесплатный дизайн-проект'
+                })
+
+                //- +btn({
+                //-   tag: 'a',
+                //-   href: '#',
+                //-   cls: 'btn-secondary rounded-md',
+                //-   title: 'Позвонить'
+                //- })
+
+            if item.picture
+              .top-banner__picture(class= item.picture.modifiers ? item.picture.modifiers : null)
+                img(src=`./assets/img/${item.picture.path}` alt!= item.title width="600" height="600")
+
+    if data.options.navigation.enabled
+      .swiper-button-prev(aria-label="Назад").--bordered.--color-white.--filled-secondary
+        svg(width='32' height='32' role='img' aria-hidden='true' focusable='false')
+          use(xlink:href='./assets/sprite.svg#chevron')
+      .swiper-button-next(aria-label="Вперед")
+        svg(width='32' height='32' role='img' aria-hidden='true' focusable='false')
+          use(xlink:href='./assets/sprite.svg#chevron')
+    if data.options.pagination.enabled
+      .swiper-pagination(
+        data-dynamic= data.options.pagination.dynamic ? 'true' : null
+        class= data.options.pagination.modifiers ? data.options.pagination.modifiers : null
+      )

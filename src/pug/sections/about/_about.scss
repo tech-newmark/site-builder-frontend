@@ -1,0 +1,87 @@
+@forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+@use "@pug/components/_ui/cards/simple-card/simple-card";
+
+$grid-gap: var(--gap-lg);
+
+.about {
+	&__grid-container {
+		container: about-grid-container / inline-size;
+
+		&:not(:last-child) {
+			margin-bottom: 120px; // Для показа всех блоков на одной странице
+		}
+	}
+
+	&__grid {
+		gap: $grid-gap;
+		container: about-grid / inline-size;
+		// Если у нас есть две колонки и нужен грид
+		&:has(.about__grid-item) {
+			display: grid;
+			grid-template-columns: 1fr;
+
+			@include container-up("about-grid-container", $tablet-lg-width) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+		// Если нет колонок
+		&:not(:has(.about__grid-item)) {
+			@extend %flex-column;
+		}
+
+		&.--reversed:has(.about__grid-item) {
+			& .about__grid-item:nth-child(1) {
+				order: 2;
+			}
+		}
+
+		&.--align-center:has(.about__grid-item) {
+			align-items: center;
+		}
+
+		&-item {
+			height: fit-content;
+			@extend %flex-column;
+			gap: var(--gap-sm);
+			container: about-grid-item / inline-size;
+
+			@include container-up("about-grid-container", $tablet-lg-width) {
+				position: sticky;
+				top: 30px;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+				object-fit: contain;
+				border-radius: var(--current-border-radius);
+			}
+		}
+
+		&:not(:has(.about__grid-item)) {
+			@include container-up("about-grid", 640px) {
+				.about__features-list:not(.--column) {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+		}
+	}
+
+	&__features-list {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 32px var(--gap-lg);
+
+		&.--column {
+			grid-template-columns: 1fr;
+		}
+
+		@include container-up("about-grid-item", 640px) {
+			&:not(.--column) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+}

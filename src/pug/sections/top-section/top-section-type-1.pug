@@ -1,0 +1,72 @@
+include ../../components/_ui/sliders/top-banner/template
+
+section.top-section
+  +top-banner-slider({
+    options: {
+      navigation: {
+        enabled: true
+      },
+      pagination: {
+        enabled: true,
+        dynamic: false, 
+        modifiers: '--pagination-bullets-rectangle-wide --pagination-bullets-size-lg'
+      },
+      modifiers: '--height-70' 
+    },
+
+    items: [
+      {
+        modifiers: '--overlayed-blured --bg-center --dir-rtl',
+        title: {
+          tag: 'h1',
+          text: 'Современные интерьеры и ремонт под ключ'
+        },
+        description: {
+          text: 'Индивидуальный дизайн интерьера под ключ по доступной цене'
+        },
+        background: {
+          path: 'top-section-bg@1x.jpg',
+        },
+        
+        content: {
+          modifiers: '--blured-content --bordered-content --fullwidth-content --rounded-content --text-left'
+        }
+      },
+      {
+        modifiers: '--overlayed-dark --bg-center --dir-tl',
+        title: {
+          tag: 'h1',
+          text: 'Современные интерьеры и ремонт под ключ'
+        },
+        description: {
+          text: 'Индивидуальный дизайн интерьера под ключ по доступной цене'
+        },
+        background: {
+          path: 'top-section-bg@1x.jpg',
+        },
+        picture: {
+          modifiers: '--fullheight-picture',
+          path: 'top-banner-picture.png',
+        },
+        content: {
+          modifiers: '--blured-content --content-position-left --fulwidth --bordered-content --rounded-content --text-left'
+        }
+      },
+
+      {
+        modifiers: '--overlayed-dark --bg-bottom --fullwidth --dir-rtl',
+        title: {
+          tag: 'h1',
+          text: 'Современные интерьеры и ремонт под ключ'
+        },
+        description: {
+          text: 'Индивидуальный дизайн интерьера под ключ по доступной цене'
+        },
+        background: {
+          path: 'top-section-bg@1x.jpg',
+        },
+        content: {modifiers: '--blured-content --rounded-content --fullwidth --content-position-lef'},
+      },
+    ]
+  })
+

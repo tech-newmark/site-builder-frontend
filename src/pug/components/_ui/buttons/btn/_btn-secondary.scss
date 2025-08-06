@@ -1,0 +1,16 @@
+@forward "@pug/components/_ui/buttons/btn/_btn";
+
+$btn-primary-color: var(--primary-color);
+$btn-secondary-bg-color: transparent;
+
+.btn-secondary {
+	@extend %btn;
+
+	color: $btn-primary-color;
+	background-color: $btn-secondary-bg-color;
+	border-color: $btn-primary-color;
+
+	span {
+		color: $btn-primary-color;
+	}
+}

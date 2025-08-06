@@ -1,0 +1,64 @@
+// пагинация слайдера
+.swiper,
+.swiper-container {
+  .swiper-pagination {
+    &-bullet {
+      width: 8px;
+      height: 8px;
+      background-color: var(--primary-color);
+    }
+
+    &.--pagination-bullets-size-md {
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    &.--pagination-bullets-size-lg {
+      .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &.--pagination-bullets-square {
+      .swiper-pagination-bullet {
+        border-radius: 0;
+      }
+    }
+
+    &.--pagination-bullets-rectangle {
+      .swiper-pagination-bullet {
+        width: 16px;
+        border-radius: 0;
+      }
+
+      &.--pagination-bullets-size-md {
+        .swiper-pagination-bullet {
+          width: 20px;
+          height: 10px;
+        }
+      }
+
+      &.--pagination-bullets-size-lg {
+        .swiper-pagination-bullet {
+          width: 24px;
+          height: 12px;
+        }
+      }
+    }
+
+    &:not(
+        .swiper-pagination-bullets-dynamic
+      ).--pagination-bullets-rectangle-wide {
+      display: flex;
+      width: 100%;
+
+      .swiper-pagination-bullet {
+        flex-grow: 1;
+        border-radius: 0;
+      }
+    }
+  }
+}
