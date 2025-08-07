@@ -1,11 +1,11 @@
 :root {
-  // fonts
+  /* fonts */
   --montserrat: "Montserrat", sans-serif;
   --roboto: "Roboto", sans-serif;
   --inter: "Inter", sans-serif;
   --manrope: "Manrope", sans-serif;
 
-  // colors
+  /* colors */
 
   --white-color: #fff;
   --black-color: #000;
@@ -20,7 +20,7 @@
   --muted-color: #c8c8c8;
   --gray-500-color: #555;
 
-  // containers
+  /* containers */
 
   --content-width: 1680px;
   --container-offset: clamp(20px, 2.4vw, 60px);
@@ -31,12 +31,13 @@
     var(--content-fluid-width) + (var(--container-offset) * 2)
   );
 
-  // transitions
+  /* transitions */
 
   --main-transition: 0.15s linear;
   --slow-transition: 0.3s linear;
 
-  // site-base-options
+  /* site-base-options */
+
   --site-base-font-family: var(--montserrat);
   --site-base-font-weight: 400;
   --site-base-font-size: 16px;
@@ -46,8 +47,7 @@
   --section-title-color: var(--primary-color);
   --title-underline-color: var(--primary-color);
 
-
-  // scrollbar
+  /* scrollbar */
 
   --scrollbar-color: var(--site-bg-color);
   --scrollbar-width: 12px;
@@ -55,12 +55,12 @@
   --scrollbar-thumb-color: var(--primary-color);
   --scrollbar-thumb-border-radius: 0;
 
-  // offsets
+  /* offsets */
 
   --gap-sm: clamp(16px, 2.2vw, 32px);
   --gap-lg: calc(clamp(16px, 2.2vw, 32px) * 2);
 
-  // border-radius
+  /* border-radius */
 
   --border-radius-disabled: 0;
   --border-radius-xs: 5px;
@@ -68,4 +68,5 @@
   --border-radius-md: 15px;
   --border-radius-lg: 30px;
   --current-border-radius: var(--border-radius-lg);
+  --form-controls-border-radius: var(--current-border-radius);
 }

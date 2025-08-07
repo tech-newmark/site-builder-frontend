@@ -1,0 +1,19 @@
+include ../../form-controls/checkbox/checkbox
+include ../../buttons/btn/btn
+
+.userconsent
+  +checkbox({
+              label: {
+                class: "",
+                text: "Согласен на <a href='#'>обработку персональных данных</a>",
+              },
+              type: "checkbox",
+              id: "agreement",
+              name: "agreement",
+              checked: true,
+            })
+            +btn({
+              tag: "button",
+              type: "button",
+              title: "Отправить"
+            })

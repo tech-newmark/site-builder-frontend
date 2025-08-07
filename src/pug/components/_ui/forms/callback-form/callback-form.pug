@@ -1,0 +1,111 @@
+include ../../form-controls/input/input
+include ../../form-controls/checkbox/checkbox
+include ../../form-controls/textarea/textarea
+include ../../form-controls/radio/radio
+include ../../buttons/btn/btn
+
+mixin callback-form()
+  .callback-form-container
+    .callback-form(style="background-image: url('@img/form-bg.jpg')").--content-width-lg.--content-align-center.--text-color-light
+      .callback-form__header
+        p.base-title Получите бесплатную консультацию
+        p.base-text Оставьте свои данные и мы обязательно свяжемся с вами
+      .callback-form__content
+        form(action="#")
+          .callback-form__content-field.callback-form__content-field--main
+            +input({
+              label: {
+                class: "",
+                text: "Введите имя",
+              },
+              id: "name",
+              name: "name",
+              placeholder: "Имя",
+              required: true,
+            })
+            +input({
+              label: {
+                class: "",
+                text: "Введите телефон",
+              },
+              type: "tel",
+              id: "phone",
+              name: "phone",
+              placeholder: "Телефон",
+              required: true,
+            })
+            +input({
+              label: {
+                class: "",
+                text: "Введите email",
+              },
+              type: "email",
+              id: "email",
+              name: "email",
+              placeholder: "Email",
+              required: true,
+            })
+            +textarea({
+              label: {
+                class: "",
+                text: "Введите ваш текст",
+              },
+              id: "textarea",
+              name: "email",
+              placeholder: "Введите ваш текст",
+              required: false,
+            })
+            +radio({
+              label: {
+                class: "",
+                text: "Вариант А",
+              },
+              type: "radio",
+              id: "radio_A",
+              name: "choose_your_variant",
+              checked: true,
+            })
+            +radio({
+              label: {
+                class: "",
+                text: "Вариант B",
+              },
+              type: "radio",
+              id: "radio_B",
+              name: "choose_your_variant",
+              checked: true,
+            })
+            +radio({
+              label: {
+                class: "",
+                text: "Вариант C",
+              },
+              type: "radio",
+              id: "radio_C",
+              name: "choose_your_variant",
+              checked: true,
+            })
+            +checkbox({
+              label: {
+                class: "",
+                text: "Вариант D",
+              },
+              type: "checkbox",
+              id: "checkbox1",
+              name: "checkbox1",
+              checked: true,
+            })
+            +checkbox({
+              label: {
+                class: "",
+                text: "Вариант E",
+              },
+              type: "checkbox",
+              id: "checkbox2",
+              name: "checkbox2",
+              checked: true,
+            })
+          .callback-form__content-field.callback-form__content-field--footer
+            include ../../form-controls/captcha-block/captcha-block
+            include ../userconsent/userconsent
+

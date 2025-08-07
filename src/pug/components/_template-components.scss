@@ -13,6 +13,12 @@
 
 // inputs
 
+@use "./_ui/form-controls/input/input";
+@use "./_ui/form-controls/checkbox/checkbox";
+@use "./_ui/form-controls/textarea/textarea";
+@use "./_ui/form-controls/radio/radio";
+@use "./_ui/form-controls/captcha-block/captcha-block";
+
 // template-block-components
 @use "./static/content-block/content-block";
 @use "./static/button-row/button-row";

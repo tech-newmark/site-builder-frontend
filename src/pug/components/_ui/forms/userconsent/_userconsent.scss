@@ -1,0 +1,6 @@
+@forward "@styles/_extends/flexbox";
+
+.userconsent {
+  @extend %flex-column;
+  gap: 16px;
+}

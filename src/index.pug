@@ -5,17 +5,15 @@ block variables
     const title = "nm-site-builder"
     const description = ""
     const keywords = ""
-    const styles = ['./styles/template-styles']
-  //- - console.log('TEST', isProduction)
-  if !isProduction
-    -
-      styles.push('./styles/dev') 
+    const styles = ['./styles/template-styles','./styles/dev']
 
 block content
+
   //- include ./pug/sections/top-section/index
   //- include ./pug/sections/features/index
   //- include ./pug/sections/about/index
   //- include ./pug/sections/clients-preview/index
+  include ./pug/sections/form-block/index
   include ./pug/sections/staff-preview/index
   include ./pug/sections/contacts-preview/index
   include ./pug/sections/faq/index

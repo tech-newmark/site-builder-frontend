@@ -1,0 +1,98 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.captcha-block {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+
+  .input-wrapper {
+    input {
+      border: 2px solid transparent;
+
+      &::placeholder {
+        font-size: 16px;
+        line-height: 1;
+        font-weight: 400;
+        color: var(--muted-color);
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  &__img-wrapper {
+    @extend %flex-center;
+    min-width: 30%;
+    max-height: 56px;
+    background-color: white; /*?*/
+    border: 2px solid transparent;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+body:has(.--form-controls-border-color-primary) {
+  .captcha-block {
+    .input-wrapper {
+      input {
+        border-color: var(--primary-color);
+      }
+    }
+    &__img-wrapper {
+      border-color: var(--primary-color);
+    }
+  }
+}
+
+body:has(.--form-controls-border-color-secondary) {
+  .captcha-block {
+    .input-wrapper {
+      input {
+        border-color: var(--secondary-color);
+      }
+    }
+    &__img-wrapper {
+      border-color: var(--secondary-color);
+    }
+  }
+}
+
+body:has(.--form-controls-rounded) {
+  .captcha-block {
+    .input-wrapper {
+      input {
+        border-radius: var(--form-controls-border-radius);
+      }
+    }
+    &__img-wrapper {
+      border-radius: var(--form-controls-border-radius);
+    }
+  }
+}
+
+/* Common styles*/
+
+$invalidFieldColor: var(--danger-color);
+
+.captcha-block.invalid-fld {
+  .input-wrapper {
+    input {
+      border-color: $invalidFieldColor;
+
+      &::placeholder {
+        color: $invalidFieldColor;
+      }
+    }
+  }
+
+  .captcha-block__img-wrapper {
+    border-color: $invalidFieldColor;
+  }
+}

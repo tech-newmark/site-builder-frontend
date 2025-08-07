@@ -1,0 +1,85 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+@forward "@styles/_extends/resets";
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+$controlSize: 24px;
+
+.checkbox-wrapper {
+  label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--site-base-font-family);
+    font-size: clamp(14px, 2.2vw, 16px);
+    font-weight: 400;
+    width: 100%;
+    cursor: pointer;
+
+    &::before {
+      position: relative;
+      content: "";
+      width: 24px;
+      aspect-ratio: 1;
+      background-color: white;
+      border: 2px solid var(--primary-color);
+    }
+
+    a {
+      color: var(--primary-color);
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  &:has(input:checked) label::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 12px;
+    top: 50%;
+    left: calc($controlSize/2);
+    transform: translate(-50%, -50%);
+    mask: url("@assets/img/checkbox.svg");
+    mask-repeat: no-repeat;
+    background-color: var(--primary-color);
+  }
+}
+
+body:has(.--form-controls-border-color-secondary) {
+  .checkbox-wrapper {
+    label::before {
+      border-color: var(--secondary-color);
+    }
+
+    label::after {
+      background-color: var(--secondary-color);
+    }
+  }
+}
+
+/* Common styles*/
+
+$invalidFieldColor: var(--danger-color);
+
+.checkbox-wrapper.invalid-fld {
+  label {
+    &::before {
+      border-color: $invalidFieldColor;
+    }
+    span {
+      color: $invalidFieldColor;
+
+      a {
+        color: $invalidFieldColor;
+      }
+    }
+  }
+
+  animation: shaker var(--main-transition);
+}

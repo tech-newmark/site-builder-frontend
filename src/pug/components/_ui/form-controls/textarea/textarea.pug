@@ -1,0 +1,4 @@
+mixin textarea(data)
+  .textarea-wrapper
+    label(class=data.label.class, for=data.id, aria-label=data.label.text)
+    textarea(id= data.id, placeholder= data.placeholder, name= data.name)
