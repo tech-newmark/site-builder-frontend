@@ -1,0 +1,91 @@
+.about__grid:not(:has(.about__grid-item)), .about__grid-item{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+}
+
+.simple-card .base-subtitle{
+  position:relative;
+  padding-bottom:16px;
+}
+.simple-card .base-subtitle::after{
+  position:absolute;
+  bottom:0;
+  left:0;
+  content:"";
+  width:60px;
+  height:4px;
+  background-color:var(--title-underline-color);
+}
+
+.about__grid-container{
+  container:about-grid-container/inline-size;
+}
+.about__grid-container:not(:last-child){
+  margin-bottom:120px;
+}
+.about__grid{
+  gap:var(--gap-lg);
+  container:about-grid/inline-size;
+}
+.about__grid:has(.about__grid-item){
+  display:grid;
+  grid-template-columns:1fr;
+}
+@container about-grid-container (min-width: 960px ){
+  .about__grid:has(.about__grid-item){
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+@container about-grid (min-width: 640px ){
+  .about__grid:not(:has(.about__grid-item)) .about__features-list:not(.--column){
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+.about__grid-item{
+  height:-webkit-fit-content;
+  height:-moz-fit-content;
+  height:fit-content;
+  gap:var(--gap-sm);
+  container:about-grid-item/inline-size;
+}
+@container about-grid-container (min-width: 960px ){
+  .about__grid-item{
+    position:sticky;
+    top:30px;
+  }
+}
+.about__grid-item img{
+  width:100%;
+  height:auto;
+  -o-object-fit:contain;
+     object-fit:contain;
+  border-radius:var(--current-border-radius);
+}
+.about__grid.--reversed:has(.about__grid-item) .about__grid-item:nth-child(1){
+  -webkit-box-ordinal-group:3;
+      -ms-flex-order:2;
+          order:2;
+}
+.about__grid.--align-center:has(.about__grid-item){
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+}
+.about__features-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:32px var(--gap-lg);
+}
+.about__features-list.--column{
+  grid-template-columns:1fr;
+}
+@container about-grid-item (min-width: 640px ){
+  .about__features-list:not(.--column){
+    grid-template-columns:repeat(2, 1fr);
+  }
+}

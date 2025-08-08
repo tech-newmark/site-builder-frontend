@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>nm-site-builder</title>
+    <meta name="description" content=""/>
+    <script type="module" crossorigin src="./assets/main-DwtUmVSu.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/css/main.css">
+  </head>
+</html>
+<header class="header"><span>Header</span></header>
+<main class="--section-headers-underlined">
+  <section class="form-block">
+    <div class="container">
+        <div class="callback-form-container">
+          <div class="callback-form --content-width-lg --content-align-center --text-color-light" style="background-image:url('./assets/img/form-bg.jpg')">
+            <div class="callback-form__header">
+              <p class="base-title">Получите бесплатную консультацию</p>
+              <p class="base-text">Оставьте свои данные и мы обязательно свяжемся с вами</p>
+            </div>
+            <div class="callback-form__content">
+              <form action="#">
+                <div class="callback-form__content-field callback-form__content-field--main">
+                    <div class="input-wrapper">
+                      <label for="name" aria-label="Введите имя"></label>
+                      <input type="text" id="name" placeholder="Имя" name="name">
+                    </div>
+                    <div class="input-wrapper">
+                      <label for="phone" aria-label="Введите телефон"></label>
+                      <input type="tel" id="phone" placeholder="Телефон" name="phone">
+                    </div>
+                    <div class="input-wrapper">
+                      <label for="email" aria-label="Введите email"></label>
+                      <input type="email" id="email" placeholder="Email" name="email">
+                    </div>
+                    <div class="textarea-wrapper">
+                      <label for="textarea" aria-label="Введите ваш текст"></label>
+                      <textarea id="textarea" placeholder="Введите ваш текст" name="email"></textarea>
+                    </div>
+                    <div class="radio-wrapper">
+                      <input type="radio" id="radio_A" name="choose_your_variant" checked="true">
+                      <label class="radio-label" for="radio_A"><span>Вариант А</span></label>
+                    </div>
+                    <div class="radio-wrapper">
+                      <input type="radio" id="radio_B" name="choose_your_variant" checked="true">
+                      <label class="radio-label" for="radio_B"><span>Вариант B</span></label>
+                    </div>
+                    <div class="radio-wrapper">
+                      <input type="radio" id="radio_C" name="choose_your_variant" checked="true">
+                      <label class="radio-label" for="radio_C"><span>Вариант C</span></label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                      <input type="checkbox" id="checkbox1" name="checkbox1" checked="true">
+                      <label class="checkbox-label" for="checkbox1"><span>Вариант D</span></label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                      <input type="checkbox" id="checkbox2" name="checkbox2" checked="true">
+                      <label class="checkbox-label" for="checkbox2"><span>Вариант E</span></label>
+                    </div>
+                </div>
+                <div class="callback-form__content-field callback-form__content-field--footer"><div class="captcha-block invlid-fld">
+<input type="hidden" name="captcha_sid" value="" />
+<div class="input-wrapper">
+<input type="text" placeholder="Введите символы с картинки" name="captcha_word" size="30" maxlength="50" value="" class="inputtext" />
+</div>
+<div class="captcha-block__img-wrapper">
+<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA+Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2ODApLCBkZWZhdWx0IHF1YWxpdHkK/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8AAEQgAKAC0AwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A9yooorQzCsDxF4x0bwv5aajO3nSDckMS7nI9fQD6mt+uc8SeCNF8UypPfxyrcInlrNDJtYLknGDkdSe1NAYlv8X/AAzNIFkS/gGfvyQgj/x1if0qXXviho2mWEFzp23VGlYjZHJs8sD+9kEjOeOOcH0rzr4ZaBpXiHV7611W289Ut98Y8xl2ncAT8pHrVzxx4Afwmi6xpFxK1mHCsrH54SenI6qen4jrmnKN9E7Mtcqepr/8Lu/6l7/yd/8AtdIfjccHHh8A9ibzP/slZnwbt7ebxJfPKqtIlodisM8Flyf5fnXtnlR/881/KuWHtJq/Mb1fZQly8v4nn/hr4lz6rHfXGpaSbWxtLdp3uo2JUAY+Xkck9sH8K4i/+K3jHV/tV1otoLWwtjud4rfzTGp6b2YED8hXoXxbaRPhzfiPO1niV8dl3r/XFcJ4L8W+HtF+GOqWN3MBfSmVTAEJabeu1cdsdvbH59tGFoXerJXK1zKJ1vw0+Ilx4skn03U4o1v4Y/NWWMYWRMgHI7EEjp1z2xXo1fHMEkkMgkidkdTlWU4IPsa+tPDtw154Z0q5di7zWcMjMxySSgJJqq1NR1RnVilLQsalef2fpd3e+WZPs8Ly7Acbtqk4z+FeSn4t6/c3BWy0uzIPIQpJI35hh/KvWtShNzpV5ABkywOmPXKkV4B4S8XXXhK6nkhtop45wolRyQflzjB7dT61w1pNNa2RyVZNNa2PVfA/irW/EctyNS0uO3hiXidFZAWz93DZzxk9ePxrtKyvDuvWviTR49QtQVDEq8bHmNh1B/n9CK1a1htvc1jtvcKKKKooKKKKACiiigAooooAKKKKACiiigD56+G2v2Hh3xLLdalP5NvJatFu2M3O5SOFBPatTxv46k8YPFomi20ptWlByV/eTt2AHYd/Xp0rn/AOlWWteMLSx1CHzrZ1kLJuK5whI5BB6ivedJ8K6HoUhk03TYYJSMeZyz49NzEkVbaTKdkz5+8J2Wt3+tCDQbl7e8MZJdZjH8gIyCR1HTivY/C+k+ObDUo21nWLO6sMESRZLPnHBB2jvjvXlXw51W20jxpaT3cywwOrxNIxwFyOMnsM45r3aXxNoMAzLrWnL9blP8a4qCVr3OvEuXNZIu39ha6nYTWV7Cs1tMpSSNuhFeU6/wDBnRbKwvdRttUu4IreCSYxyhXHyqTjPHHHvXV+JfiJpGmaBe3Wl6jY3d9Eo8qHzNwYlgOx5xnPB7V5j4h+LV14g8GtpL2awXs7bbiWI4jMY5woJJBPQ57fXjvpcz1i9DCnGotjzlFO0tjjOM19SeAZvP8AAWivnOLVU/75+X+leFX2gNY/CzTNVkQrJd6g5BI52FML/wCgMfxr2b4Vzeb8OdL55TzUP4SN/TFbVneF/MVV3Z2VZdz4d0e5juQ+mWYe4VlkkEChmz1OcZz71538T/Grx3b+HNPlmhliwbtwNu4MoZVU5zjB5/D3rol8Yado/gCyun1BLi8NmixoZN0jy7cHI68HqTXDKSTcZHM5K7TOZ+Dd64vNTsSSY2jWYD0IOD/MflXrleS/BzTZftGo6owIhCC3X/abIY/lgfnXrVTQvyIVH4EFFFFamoUUUUAFFFFABRRRQAUUUUAFFFFAHkngv4f654f8bxXd3FEbKBZAJ0kBD5UgYXOR17ivW6KKbdwbueU3HwUhe4ka31x4oixKo9rvKj0zvGfyqL/hSP8A1MP/AJJf/bKKKy9jDsbfWKncdH8EYvMXzteZ4s/Mq2gUkexLnH5GtmH4N+FItQF0UvJIwc/ZnmHl/oN360UVpBez+HQmVact2cL4/tfHGo6jNpT6TcyaRbzbrOKytN0SoAVQhlGc7T0J/AVR0O/+I/h3T/sGm6XqkdsGLBG0xn2k9cEpmiiuuMrxSsTcveHfB/iPxf4wfUvE9ndwwMM3Ms0PkM+E2qFGB6L2xx+fXx/BzT1vd8mq3D22ciIRgNj0LZ/pRRXNWjGcrtbGc4Rk9Ueh2Vja6bZx2lnAkMEYwqIMAf59asUUVIwooooGFFFFABRRRQAUUUUAf//Z" width="180" height="40" alt="" />
+</div>
+</div>
+                  <div class="userconsent">
+                                <div class="checkbox-wrapper">
+                                  <input type="checkbox" id="agreement" name="agreement" checked="true">
+                                  <label class="checkbox-label" for="agreement"><span>Согласен на <a href='#'>обработку персональных данных</a></span></label>
+                                </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  <section class="base-section staff-preview --grid-type-3">
+    <div class="container">
+      <div class="base-section__header">
+        <h2 class="base-title">Наши сотрудники</h2>
+        <p class="base-text">Наша команда состоит из опытных специалистов с многолетним стажем.</p>
+      </div>
+            <div class="swiper-container">
+              <div class="swiper main-slider --js--auto-fill staff-preview-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                          <div class="staff-preview-card">
+                            <div class="staff-preview-card__picture"><img src="./assets/img/staff-preview-mock1.png" alt="staff-preview-card" width="400" height="300"></div>
+                            <div class="staff-preview-card__content"><span class="base-text staff-preview-card__content-title">Константин Константинов</span><small class="staff-preview-card__content-description">инженер</small><span class="base-text staff-preview-card__content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></div>
+                          </div>
+                  </div>
+                  <div class="swiper-slide">
+                          <div class="staff-preview-card">
+                            <div class="staff-preview-card__picture"><img src="./assets/img/staff-preview-mock2.png" alt="staff-preview-card" width="400" height="300"></div>
+                            <div class="staff-preview-card__content"><span class="base-text staff-preview-card__content-title">Константин Константинов</span><small class="staff-preview-card__content-description">инженер</small><span class="base-text staff-preview-card__content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></div>
+                          </div>
+                  </div>
+                  <div class="swiper-slide">
+                          <div class="staff-preview-card">
+                            <div class="staff-preview-card__picture"><img src="./assets/img/staff-preview-mock1.png" alt="staff-preview-card" width="400" height="300"></div>
+                            <div class="staff-preview-card__content"><span class="base-text staff-preview-card__content-title">Константин Константинов</span><small class="staff-preview-card__content-description">инженер</small><span class="base-text staff-preview-card__content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></div>
+                          </div>
+                  </div>
+                  <div class="swiper-slide">
+                          <div class="staff-preview-card">
+                            <div class="staff-preview-card__picture"><img src="./assets/img/staff-preview-mock2.png" alt="staff-preview-card" width="400" height="300"></div>
+                            <div class="staff-preview-card__content"><span class="base-text staff-preview-card__content-title">Константин Константинов</span><small class="staff-preview-card__content-description">инженер</small><span class="base-text staff-preview-card__content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></div>
+                          </div>
+                  </div>
+                  <div class="swiper-slide">
+                          <div class="staff-preview-card">
+                            <div class="staff-preview-card__picture"><img src="./assets/img/staff-preview-mock1.png" alt="staff-preview-card" width="400" height="300"></div>
+                            <div class="staff-preview-card__content"><span class="base-text staff-preview-card__content-title">Константин Константинов</span><small class="staff-preview-card__content-description">инженер</small><span class="base-text staff-preview-card__content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></div>
+                          </div>
+                  </div>
+                  <div class="swiper-slide">
+                          <div class="staff-preview-card">
+                            <div class="staff-preview-card__picture"><img src="./assets/img/staff-preview-mock2.png" alt="staff-preview-card" width="400" height="300"></div>
+                            <div class="staff-preview-card__content"><span class="base-text staff-preview-card__content-title">Константин Константинов</span><small class="staff-preview-card__content-description">инженер</small><span class="base-text staff-preview-card__content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></div>
+                          </div>
+                  </div>
+                  <div class="swiper-slide">
+                          <div class="staff-preview-card">
+                            <div class="staff-preview-card__picture"><img src="./assets/img/staff-preview-mock1.png" alt="staff-preview-card" width="400" height="300"></div>
+                            <div class="staff-preview-card__content"><span class="base-text staff-preview-card__content-title">Константин Константинов</span><small class="staff-preview-card__content-description">инженер</small><span class="base-text staff-preview-card__content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></div>
+                          </div>
+                  </div>
+                  <div class="swiper-slide">
+                          <div class="staff-preview-card">
+                            <div class="staff-preview-card__picture"><img src="./assets/img/staff-preview-mock2.png" alt="staff-preview-card" width="400" height="300"></div>
+                            <div class="staff-preview-card__content"><span class="base-text staff-preview-card__content-title">Константин Константинов</span><small class="staff-preview-card__content-description">инженер</small><span class="base-text staff-preview-card__content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></div>
+                          </div>
+                  </div>
+                </div>
+              </div>
+              <button class="swiper-button-prev" type="button" aria-label="Назад">
+                <svg width="32" height="32" role="img" aria-hidden="true" focusable="false">
+                  <use xlink:href="./assets/sprite.svg#chevron"></use>
+                </svg>
+              </button>
+              <button class="swiper-button-next" type="button" aria-label="Вперед">
+                <svg width="32" height="32" role="img" aria-hidden="true" focusable="false">
+                  <use xlink:href="./assets/sprite.svg#chevron"></use>
+                </svg>
+              </button>
+              <div class="swiper-pagination"></div>
+            </div>
+    </div>
+  </section>
+  <section class="base-section contacts-preview --horizontal-view --items-alig-center --fulwidth-content">
+    <div class="container">
+      <div class="base-section__header">
+        <h2 class="base-title">Наши контакты</h2>
+        <p class="base-text">Мы ценим ваше время и стремимся к быстрому и эффективному взаимодействию. Свяжитесь с нами, и вы получите профессиональную консультацию в кратчайшие сроки.</p>
+      </div>
+      <div class="contacts-preview__grid">
+        <div class="contacts-preview__grid-item contacts-preview__grid-item--content">
+          <div class="contact-preview-item">
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="./assets/sprite.svg#icon-phone"></use>
+            </svg><strong>Телефоны для связи</strong><a href="tel:+78120000000">+7 (812) 000-00-00</a><a href="tel:+78120000000">+7 (921) 000-00-00</a>
+          </div>
+          <div class="contact-preview-item">
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="./assets/sprite.svg#icon-mail"></use>
+            </svg><strong>Эл.почта</strong><a href="mailto:tech@nmark.ru">info@nmark.ru</a>
+          </div>
+          <div class="contact-preview-item">
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="./assets/sprite.svg#icon-pin"></use>
+            </svg><strong>Адрес</strong>
+            <address>Санкт-Петербург, ул. парфеновская 12к2, офис 204</address>
+          </div>
+        </div>
+        <div class="contacts-preview__grid-item contacts-preview__grid-item--map"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afa988e66df382c0ebbbf4b77b10666b8441a7078ec2a3c35a543cefa20ce03b6&amp;width=100%25&amp;height=440&amp;lang=ru_RU&amp;scroll=false"></script></div>
+      </div>
+    </div>
+  </section>
+  <section class="base-section faq --horizontal-view">
+    <div class="container">
+      <div class="base-section__header">
+        <h2 class="base-title">Часто задаваемые вопросы</h2>
+        <p class="base-text">Этот блок поможет вам быстро найти ответы на свои вопросы</p>
+      </div>
+            <ul class="accordeon --js--toggle-mode --rounded-items --bordered-items --js--expanded-first-default">
+              <li class="accordeon__item">
+                <div class="accordeon__item-header" tabindex="0" aria-label="Развернуть" role="button"><span class="base-text">Звук клавиш печатной машинки попахивает безумием</span>
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/sprite.svg#cross"></use>
+                  </svg>
+                </div>
+                <div class="accordeon__item-body">
+                  <div class="content-block">
+                    <p>Картельные сговоры не допускают ситуации, при которой независимые государства набирают популярность среди определенных слоев населения, а значит, должны быть заблокированы в рамках своих собственных рациональных ограничений. Сложно сказать, почему диаграммы связей и по сей день остаются уделом либералов, которые жаждут быть функционально разнесены на независимые элементы.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="accordeon__item">
+                <div class="accordeon__item-header" tabindex="0" aria-label="Развернуть" role="button"><span class="base-text">Ночь оказалась долгой</span>
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/sprite.svg#cross"></use>
+                  </svg>
+                </div>
+                <div class="accordeon__item-body">
+                  <div class="content-block">
+                    <p>Наше дело не так однозначно, как может показаться: перспективное планирование позволяет оценить значение своевременного выполнения сверхзадачи. Таким образом, выбранный нами инновационный путь требует определения и уточнения приоретизации разума над эмоциями.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="accordeon__item">
+                <div class="accordeon__item-header" tabindex="0" aria-label="Развернуть" role="button"><span class="base-text">Давайте разбираться: жизнь прекрасна!</span>
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/sprite.svg#cross"></use>
+                  </svg>
+                </div>
+                <div class="accordeon__item-body">
+                  <div class="content-block">
+                    <p>С другой стороны, глубокий уровень погружения предопределяет высокую востребованность как самодостаточных, так и внешне зависимых концептуальных решений. Равным образом, сложившаяся структура организации не оставляет шанса для глубокомысленных рассуждений.</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+    </div>
+  </section>
+  <section class="base-section reviews">
+    <div class="container">
+      <div class="base-section__header">
+        <h2 class="base-title">Отзывы</h2>
+        <p class="base-text">Наши клиенты делятся своими впечатлениями и результатами работы.</p>
+      </div>
+            <div class="swiper-container">
+              <div class="swiper main-slider reviews-slider --max-slides-3">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                          <article class="review-card --bordered --rounded --content-align-center --content-align-center --no-ating">
+                            <p class="review-card__rating rating" data-value="5">
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip01">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star01" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip01)" href="#star01" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip02">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star02" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip02)" href="#star02" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip03">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star03" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip03)" href="#star03" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip04">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star04" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip04)" href="#star04" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip05">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star05" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip05)" href="#star05" fill="var(--primary-color)"></use>
+                              </svg>
+                            </p>
+                            <div class="review-card__content">
+                              <p class="review-card__text">Недавно закончили ремонт в нашей двухкомнатной квартире с этой студией интерьеров, и мы с мужем в полном восторге! Они предложили нам несколько вариантов дизайна, из которых мы выбрали самый подходящий.</p>
+                              <button class="review-card__button">Читать далее.</button>
+                            </div>
+                            <div class="review-card__author-info"><img class="review-card__image" src="./assets/img/review-mock-1.png" width="36px" height="36px" alt="">
+                              <p><span class="review-card__author">Кириллов Владимир</span><span class="review-card__job_title">Генеральный директор компании “АРТ”</span></p>
+                            </div>
+                          </article>
+                  </div>
+                  <div class="swiper-slide">
+                          <article class="review-card --bordered --rounded --content-align-center --content-align-center --no-ating">
+                            <p class="review-card__rating rating" data-value="3">
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip11">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star11" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip11)" href="#star11" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip12">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star12" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip12)" href="#star12" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip13">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star13" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip13)" href="#star13" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip14">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star14" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip14)" href="#star14" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip15">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star15" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip15)" href="#star15" fill="var(--primary-color)"></use>
+                              </svg>
+                            </p>
+                            <div class="review-card__content">
+                              <p class="review-card__text">Я обратилась в студию интерьеров для ремонта моей маленькой квартиры-студии, и результатом я просто в восторг! Ребята из студии смогли максимально эффективно использовать пространство, создав уютный и функциональный интерьер. </p>
+                              <button class="review-card__button">Читать далее.</button>
+                            </div>
+                            <div class="review-card__author-info"><img class="review-card__image" src="./assets/img/review-mock-2.png" width="36px" height="36px" alt="">
+                              <p><span class="review-card__author">Иванова Евгения</span><span class="review-card__job_title">Генеральный директор компании “АРТ”</span></p>
+                            </div>
+                          </article>
+                  </div>
+                  <div class="swiper-slide">
+                          <article class="review-card --bordered --rounded --content-align-center --content-align-center --no-ating">
+                            <p class="review-card__rating rating" data-value="2.5">
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip21">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star21" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip21)" href="#star21" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip22">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star22" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip22)" href="#star22" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip23">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star23" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip23)" href="#star23" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip24">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star24" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip24)" href="#star24" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip25">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star25" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip25)" href="#star25" fill="var(--primary-color)"></use>
+                              </svg>
+                            </p>
+                            <div class="review-card__content">
+                              <p class="review-card__text">Мы обратились в эту студию интерьеров для создания проекта нашего загородного дома, и результатом остались более чем довольны. Команда профессионалов продумала каждый уголок нашего дома, создав единый стиль и атмосферу уюта. </p>
+                              <button class="review-card__button">Читать далее.</button>
+                            </div>
+                            <div class="review-card__author-info"><img class="review-card__image" src="./assets/img/review-mock-3.png" width="36px" height="36px" alt="">
+                              <p><span class="review-card__author">Константинов Валерий</span><span class="review-card__job_title">Генеральный директор компании “АРТ”</span></p>
+                            </div>
+                          </article>
+                  </div>
+                  <div class="swiper-slide">
+                          <article class="review-card --bordered --rounded --content-align-center --content-align-center --no-ating">
+                            <p class="review-card__rating rating" data-value="1.5">
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip31">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star31" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip31)" href="#star31" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip32">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star32" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip32)" href="#star32" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip33">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star33" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip33)" href="#star33" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip34">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star34" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip34)" href="#star34" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip35">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star35" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip35)" href="#star35" fill="var(--primary-color)"></use>
+                              </svg>
+                            </p>
+                            <div class="review-card__content">
+                              <p class="review-card__text">Мы обратились в эту студию интерьеров для создания проекта нашего загородного дома, и результатом остались более чем довольны. Команда профессионалов продумала каждый уголок нашего дома, создав единый стиль и атмосферу уюта. </p>
+                              <button class="review-card__button">Читать далее.</button>
+                            </div>
+                            <div class="review-card__author-info"><img class="review-card__image" src="./assets/img/review-mock-3.png" width="36px" height="36px" alt="">
+                              <p><span class="review-card__author">Константинов Валерий</span><span class="review-card__job_title">Генеральный директор компании “АРТ”</span></p>
+                            </div>
+                          </article>
+                  </div>
+                  <div class="swiper-slide">
+                          <article class="review-card --bordered --rounded --content-align-center --content-align-center --no-ating">
+                            <p class="review-card__rating rating" data-value="4">
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip41">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star41" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip41)" href="#star41" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip42">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star42" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip42)" href="#star42" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip43">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star43" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip43)" href="#star43" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip44">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star44" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip44)" href="#star44" fill="var(--primary-color)"></use>
+                              </svg>
+                              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                  <clipPath id="myClip45">
+                                    <rect width="0" height="100"></rect>
+                                  </clipPath>
+                                </defs>
+                                <path id="star45" d="M46.2841 3.61133C47.6686 0.12972 52.3322 0.129618 53.7167 3.61133L63.8602 29.123C64.7185 31.2801 66.6731 32.7837 68.9501 32.9746L95.2802 35.1836C98.7925 35.4784 100.369 40.174 97.5673 42.6846L77.5067 60.6602C75.9025 62.0979 75.1573 64.2867 75.496 66.4199L75.578 66.8457L81.7069 93.7217C82.5752 97.5296 78.661 100.259 75.703 98.3691L53.161 83.9668C51.2225 82.7282 48.7772 82.7282 46.8387 83.9668L24.2968 98.3691C21.3388 100.259 17.4246 97.5296 18.2928 93.7217L24.4218 66.8457C24.938 64.5824 24.205 62.1938 22.494 60.6602L2.4325 42.6846C-0.369031 40.174 1.20724 35.4784 4.7196 35.1836L31.0507 32.9746C33.3276 32.7835 35.2818 31.2802 36.1395 29.123L46.2841 3.61133Z"></path>
+                                <use clip-path="url(#myClip45)" href="#star45" fill="var(--primary-color)"></use>
+                              </svg>
+                            </p>
+                            <div class="review-card__content">
+                              <p class="review-card__text">Мы обратились в эту студию интерьеров для создания проекта нашего загородного дома, и результатом остались более чем довольны. Команда профессионалов продумала каждый уголок нашего дома, создав единый стиль и атмосферу уюта. </p>
+                              <button class="review-card__button">Читать далее.</button>
+                            </div>
+                            <div class="review-card__author-info"><img class="review-card__image" src="./assets/img/review-mock-3.png" width="36px" height="36px" alt="">
+                              <p><span class="review-card__author">Константинов Валерий</span><span class="review-card__job_title">Генеральный директор компании “АРТ”</span></p>
+                            </div>
+                          </article>
+                  </div>
+                </div>
+              </div>
+              <button class="swiper-button-prev" type="button" aria-label="Назад">
+                <svg width="32" height="32" role="img" aria-hidden="true" focusable="false">
+                  <use xlink:href="./assets/sprite.svg#chevron"></use>
+                </svg>
+              </button>
+              <button class="swiper-button-next" type="button" aria-label="Вперед">
+                <svg width="32" height="32" role="img" aria-hidden="true" focusable="false">
+                  <use xlink:href="./assets/sprite.svg#chevron"></use>
+                </svg>
+              </button>
+              <div class="swiper-pagination"></div>
+            </div>
+    </div>
+  </section>
+  <section class="seo-block --align-center" style="background-image:url('./assets/img/top-secton-bg@1x.jpg'); background-color:var(--lighter-color);">
+    <div class="container">
+      <div class="content-block">
+        <h1>Заголовок первого уровня</h1>
+        <p>
+          Это пример основного абзаца текста. Он содержит несколько предложений, чтобы показать, как будет выглядеть типографика при обычном чтении.<strong> Жирный текст</strong>   и
+          <em>курсив</em> также включены. Также можно вставить <a href="#">ссылку</a>, чтобы проверить стилизацию гиперссылок.<br>Еще один пример основного абзаца текста. Он показывает, как будет выглядеть несколько абзацев логически связанного текста.
+        </p>
+        <h2>Заголовок второго уровня</h2>
+        <p>Здесь находится дополнительный абзац текста, содержащий <a href="#">ссылку</a> для проверки гиперссылок.</p>
+        <h3>Заголовок третьего уровня</h3>
+        <p>Представьте, что вы читаете длинную статью. Чтобы не утомить читателя, важно правильно разбивать текст на абзацы, использовать подзаголовки, списки и другие средства структурирования. Это делает восприятие материала более комфортным. Дополнительно можно включить <a href="#">внешнюю ссылку</a> на другой ресурс.</p>
+        <h4>Заголовок четвёртого уровня</h4>
+        <p>Заголовки четвёртого уровня часто применяются внутри статей или документации, когда необходимо разбить раздел на мелкие части. Они должны быть визуально заметны, но не доминировать над структурой.</p>
+        <h5>Заголовок пятого уровня</h5>
+        <p>Этот уровень заголовков используется редко, чаще всего в технических документах, примечаниях или вложенных списках. Он может быть стилизован курсивом или уменьшенным шрифтом.</p>
+        <h6>Заголовок шестого уровня</h6>
+        <p>Самый младший заголовок, предназначенный для служебных или второстепенных пометок. Например, дату публикации, подпись или технический комментарий. Пример ссылки: <a href="#">сноска</a>.</p>
+        <h3>Маркированный список</h3>
+        <ul>
+          <li>Первый пункт — краткое пояснение.</li>
+          <li>Второй пункт — содержит <strong>жирное</strong> выделение.</li>
+          <li>Третий пункт — может быть длинным и занимать несколько строк для проверки отступов. Также можно включить <a href="#">ссылку</a> прямо в пункт списка.</li>
+          <li>Четвертый пункт — посмотрим, как ведет себя список упорядоченных элементов, если добавить в него еще один пункт с большим количеством текста</li>
+        </ul>
+        <h3>Нумерованный список</h3>
+        <ol>
+          <li>Шаг первый: проанализировать задачу.</li>
+          <li><a href="#">Шаг второй: составить структуру текста.</a></li>
+          <li>Шаг третий: реализовать оформление и провести тестирование. Подробнее — <a href="#">здесь</a>.</li>
+        </ol>
+        <h3>Таблица с данными</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Наименование</th>
+              <th>Ед. изм.</th>
+              <th>Цена (ед.)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Мембрана гидроизоляционная Delta-M</td>
+              <td>рул.</td>
+              <td>1 150,00р.</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Смесь гидроизоляционная Ceresit CR 65</td>
+              <td>меш.</td>
+              <td>980,00р.</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Минвата ТехноНИКОЛЬ 50 мм</td>
+              <td>м.кв.</td>
+              <td>340,00р.</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Экструзионный пенополистирол XPS 30 мм</td>
+              <td>лист</td>
+              <td>195,00р.</td>
+            </tr>
+            <caption>Демонстрационная таблица № 1</caption>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
+              <th>Материал</th>
+              <th>Производитель</th>
+              <th>Цена (ед.)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">Пенопласт</td>
+              <td>ТехноНИКОЛЬ</td>
+              <td>145,00р.</td>
+            </tr>
+            <tr>
+              <td>URSA</td>
+              <td>132,50р.</td>
+            </tr>
+            <tr>
+              <td rowspan="3">Минеральная вата</td>
+              <td>ISOVER</td>
+              <td>220,00р.</td>
+            </tr>
+            <tr>
+              <td>Rockwool</td>
+              <td>245,00р.</td>
+            </tr>
+            <tr>
+              <td>Knauf</td>
+              <td>235,00р.</td>
+            </tr>
+            <tr>
+              <td>Пенофол 10 мм</td>
+              <td colspan="2">По запросу, цена зависит от объёма</td>
+            </tr>
+            <caption>Демонстрационная таблица № 2</caption>
+          </tbody>
+        </table>
+        <h3>Дополнительный абзац</h3>
+        <p>В завершение можно добавить ещё один текстовый блок. Он пригодится для проверки визуального ритма, выравнивания, расстояний между абзацами и прочих мелочей, которые делают чтение приятным. Типографика — это не только про красоту, но и про удобство восприятия. Пример ссылки в конце абзаца: <a href="#">typography.ru</a></p>
+        <h3>Цитата</h3>
+        <blockquote>«Совершенство достигается не тогда, когда нечего добавить, а когда нечего убрать.»<br>
+          <cite>— Антуан де Сент-Экзюпери</cite>
+        </blockquote>
+        <p>
+          Как говорил
+          <cite>Джон Леннон</cite>,
+          
+          <q>Жизнь — это то, что с тобой происходит, пока ты строишь планы, и с этим сложно поспорить.</q>
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="top-section">
+      <div class="swiper top-banner-slider --height-70">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="top-banner --overlayed-blured --bg-center --dir-rtl" style="background-image:url('./assets/img/top-section-bg@1x.jpg')">
+              <div class="top-banner__content --blured-content --bordered-content --fullwidth-content --rounded-content --text-left">
+                <h1 class="main-title">Современные интерьеры и ремонт под ключ</h1>
+                <p class="top-banner__text">Индивидуальный дизайн интерьера под ключ по доступной цене</p>
+                <div class="button-row">
+                    <button class="btn btn-primary"><span>Получить бесплатный дизайн-проект</span>
+                    </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="top-banner --overlayed-dark --bg-center --dir-tl" style="background-image:url('./assets/img/top-section-bg@1x.jpg')">
+              <div class="top-banner__content --blured-content --content-position-left --fulwidth --bordered-content --rounded-content --text-left">
+                <h1 class="main-title">Современные интерьеры и ремонт под ключ</h1>
+                <p class="top-banner__text">Индивидуальный дизайн интерьера под ключ по доступной цене</p>
+                <div class="button-row">
+                    <button class="btn btn-primary"><span>Получить бесплатный дизайн-проект</span>
+                    </button>
+                </div>
+              </div>
+              <div class="top-banner__picture --fullheight-picture"><img src="./assets/img/top-banner-picture.png" alt='{"tag":"h1","text":"Современные интерьеры и ремонт под ключ"}' width="600" height="600"></div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="top-banner --overlayed-dark --bg-bottom --fullwidth --dir-rtl" style="background-image:url('./assets/img/top-section-bg@1x.jpg')">
+              <div class="top-banner__content --blured-content --rounded-content --fullwidth --content-position-lef">
+                <h1 class="main-title">Современные интерьеры и ремонт под ключ</h1>
+                <p class="top-banner__text">Индивидуальный дизайн интерьера под ключ по доступной цене</p>
+                <div class="button-row">
+                    <button class="btn btn-primary"><span>Получить бесплатный дизайн-проект</span>
+                    </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev --bordered --color-white --filled-secondary" aria-label="Назад">
+          <svg width="32" height="32" role="img" aria-hidden="true" focusable="false">
+            <use xlink:href="./assets/sprite.svg#chevron"></use>
+          </svg>
+        </div>
+        <div class="swiper-button-next" aria-label="Вперед">
+          <svg width="32" height="32" role="img" aria-hidden="true" focusable="false">
+            <use xlink:href="./assets/sprite.svg#chevron"></use>
+          </svg>
+        </div>
+        <div class="swiper-pagination --pagination-bullets-rectangle-wide --pagination-bullets-size-lg"></div>
+      </div>
+  </section>
+  <section class="base-section features --underlined">
+    <div class="container">
+      <div class="base-section__header">
+        <h2 class="base-title">Наши преимущества</h2>
+        <p class="base-text">Мы создаем уникальные интерьеры, учитывая все ваши пожелания и особенности помещения. Наш профессионализм и внимание к деталям гарантируют, что ваш дом станет настоящим произведением искусства.</p>
+      </div>
+      <div class="features__grid-container">
+        <div class="features__grid features__grid--type-4">
+          <div class="features__grid-item">
+                  <div class="feature-card">
+                    <div class="feature-card__wrapper"><span class="base-subtitle">3D визуализация</span><span class="base-text">Создание реалистичных 3D моделей вашего будущего интерьера.</span>
+                    </div>
+                  </div>
+          </div>
+          <div class="features__grid-item">
+                  <div class="feature-card">
+                    <div class="feature-card__wrapper"><span class="base-subtitle">3D визуализация</span><span class="base-text">Создание реалистичных 3D моделей вашего будущего интерьера.</span>
+                    </div>
+                  </div>
+          </div>
+          <div class="features__grid-item">
+                  <div class="feature-card">
+                    <div class="feature-card__wrapper"><span class="base-subtitle">3D визуализация</span><span class="base-text">Создание реалистичных 3D моделей вашего будущего интерьера.</span>
+                    </div>
+                  </div>
+          </div>
+          <div class="features__grid-item">
+                  <div class="feature-card">
+                    <div class="feature-card__wrapper"><span class="base-subtitle">3D визуализация</span><span class="base-text">Создание реалистичных 3D моделей вашего будущего интерьера.</span>
+                    </div>
+                  </div>
+          </div>
+          <div class="features__grid-item">
+                  <div class="feature-card">
+                    <div class="feature-card__wrapper"><span class="base-subtitle">3D визуализация</span><span class="base-text">Создание реалистичных 3D моделей вашего будущего интерьера.</span>
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+      <div class="features__grid-container">
+        <div class="features__grid features__grid--type-5"> 
+          <div class="features__grid-item">
+                  <div class="feature-card">
+                    <div class="feature-card__wrapper"><img src="data:image/svg+xml,%3csvg%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17%2033.6663C14.9722%2033.4163%2012.9583%2032.8677%2010.9583%2032.0205C8.95833%2031.1733%207.17361%2029.958%205.60416%2028.3747C4.03472%2026.7913%202.76388%2024.7913%201.79166%2022.3747C0.819439%2019.958%200.333328%2017.0552%200.333328%2013.6663V11.9997H1.99999C3.41666%2011.9997%204.87499%2012.1802%206.37499%2012.5413C7.87499%2012.9025%209.27777%2013.4441%2010.5833%2014.1663C10.9167%2011.7775%2011.6736%209.32606%2012.8542%206.81217C14.0347%204.29829%2015.4167%202.13856%2017%200.333008C18.5833%202.13856%2019.9653%204.29829%2021.1458%206.81217C22.3264%209.32606%2023.0833%2011.7775%2023.4167%2014.1663C24.7222%2013.4441%2026.125%2012.9025%2027.625%2012.5413C29.125%2012.1802%2030.5833%2011.9997%2032%2011.9997H33.6667V13.6663C33.6667%2017.0552%2033.1805%2019.958%2032.2083%2022.3747C31.2361%2024.7913%2029.9653%2026.7913%2028.3958%2028.3747C26.8264%2029.958%2025.0486%2031.1733%2023.0625%2032.0205C21.0764%2032.8677%2019.0555%2033.4163%2017%2033.6663ZM16.9167%2030.2497C16.6111%2025.6386%2015.243%2022.1525%2012.8125%2019.7913C10.3819%2017.4302%207.36111%2015.9719%203.74999%2015.4163C4.05555%2020.1663%205.46527%2023.708%207.97916%2026.0413C10.493%2028.3747%2013.4722%2029.7775%2016.9167%2030.2497ZM17%2019.6663C17.4167%2019.0552%2017.9236%2018.4233%2018.5208%2017.7705C19.118%2017.1177%2019.6944%2016.5552%2020.25%2016.083C20.1944%2014.4997%2019.8819%2012.8469%2019.3125%2011.1247C18.743%209.40245%2017.9722%207.7219%2017%206.08301C16.0278%207.7219%2015.2569%209.40245%2014.6875%2011.1247C14.118%2012.8469%2013.8055%2014.4997%2013.75%2016.083C14.3055%2016.5552%2014.8889%2017.1177%2015.5%2017.7705C16.1111%2018.4233%2016.6111%2019.0552%2017%2019.6663ZM20.25%2029.4997C21.2778%2029.1663%2022.3472%2028.6802%2023.4583%2028.0413C24.5694%2027.4025%2025.6042%2026.5344%2026.5625%2025.4372C27.5208%2024.34%2028.3403%2022.9719%2029.0208%2021.333C29.7014%2019.6941%2030.1111%2017.7219%2030.25%2015.4163C27.6389%2015.8052%2025.3472%2016.6733%2023.375%2018.0205C21.4028%2019.3677%2019.8889%2021.083%2018.8333%2023.1663C19.1667%2024.0552%2019.4514%2025.0275%2019.6875%2026.083C19.9236%2027.1386%2020.1111%2028.2775%2020.25%2029.4997Z'%20fill='%23D8A47A'/%3e%3c/svg%3e" alt="3D <br>визуализация" width="32" height="32"><span class="base-subtitle">3D <br>визуализация</span><span class="base-text">Создание реалистичных 3D моделей вашего будущего интерьера.</span>
+                    </div>
+                  </div>
+          </div>
+          <div class="features__grid-item">
+                  <div class="feature-card">
+                    <div class="feature-card__wrapper"><img src="data:image/svg+xml,%3csvg%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17%2033.6663C14.9722%2033.4163%2012.9583%2032.8677%2010.9583%2032.0205C8.95833%2031.1733%207.17361%2029.958%205.60416%2028.3747C4.03472%2026.7913%202.76388%2024.7913%201.79166%2022.3747C0.819439%2019.958%200.333328%2017.0552%200.333328%2013.6663V11.9997H1.99999C3.41666%2011.9997%204.87499%2012.1802%206.37499%2012.5413C7.87499%2012.9025%209.27777%2013.4441%2010.5833%2014.1663C10.9167%2011.7775%2011.6736%209.32606%2012.8542%206.81217C14.0347%204.29829%2015.4167%202.13856%2017%200.333008C18.5833%202.13856%2019.9653%204.29829%2021.1458%206.81217C22.3264%209.32606%2023.0833%2011.7775%2023.4167%2014.1663C24.7222%2013.4441%2026.125%2012.9025%2027.625%2012.5413C29.125%2012.1802%2030.5833%2011.9997%2032%2011.9997H33.6667V13.6663C33.6667%2017.0552%2033.1805%2019.958%2032.2083%2022.3747C31.2361%2024.7913%2029.9653%2026.7913%2028.3958%2028.3747C26.8264%2029.958%2025.0486%2031.1733%2023.0625%2032.0205C21.0764%2032.8677%2019.0555%2033.4163%2017%2033.6663ZM16.9167%2030.2497C16.6111%2025.6386%2015.243%2022.1525%2012.8125%2019.7913C10.3819%2017.4302%207.36111%2015.9719%203.74999%2015.4163C4.05555%2020.1663%205.46527%2023.708%207.97916%2026.0413C10.493%2028.3747%2013.4722%2029.7775%2016.9167%2030.2497ZM17%2019.6663C17.4167%2019.0552%2017.9236%2018.4233%2018.5208%2017.7705C19.118%2017.1177%2019.6944%2016.5552%2020.25%2016.083C20.1944%2014.4997%2019.8819%2012.8469%2019.3125%2011.1247C18.743%209.40245%2017.9722%207.7219%2017%206.08301C16.0278%207.7219%2015.2569%209.40245%2014.6875%2011.1247C14.118%2012.8469%2013.8055%2014.4997%2013.75%2016.083C14.3055%2016.5552%2014.8889%2017.1177%2015.5%2017.7705C16.1111%2018.4233%2016.6111%2019.0552%2017%2019.6663ZM20.25%2029.4997C21.2778%2029.1663%2022.3472%2028.6802%2023.4583%2028.0413C24.5694%2027.4025%2025.6042%2026.5344%2026.5625%2025.4372C27.5208%2024.34%2028.3403%2022.9719%2029.0208%2021.333C29.7014%2019.6941%2030.1111%2017.7219%2030.25%2015.4163C27.6389%2015.8052%2025.3472%2016.6733%2023.375%2018.0205C21.4028%2019.3677%2019.8889%2021.083%2018.8333%2023.1663C19.1667%2024.0552%2019.4514%2025.0275%2019.6875%2026.083C19.9236%2027.1386%2020.1111%2028.2775%2020.25%2029.4997Z'%20fill='%23D8A47A'/%3e%3c/svg%3e" alt="Полный дизайн <br>интерьера" width="32" height="32"><span class="base-subtitle">Полный дизайн <br>интерьера</span><span class="base-text">Разработка концепции, планировка, подбор материалов и мебели.</span>
+                    </div>
+                  </div>
+          </div>
+          <div class="features__grid-item">
+                  <div class="feature-card">
+                    <div class="feature-card__wrapper"><img src="data:image/svg+xml,%3csvg%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17%2033.6663C14.9722%2033.4163%2012.9583%2032.8677%2010.9583%2032.0205C8.95833%2031.1733%207.17361%2029.958%205.60416%2028.3747C4.03472%2026.7913%202.76388%2024.7913%201.79166%2022.3747C0.819439%2019.958%200.333328%2017.0552%200.333328%2013.6663V11.9997H1.99999C3.41666%2011.9997%204.87499%2012.1802%206.37499%2012.5413C7.87499%2012.9025%209.27777%2013.4441%2010.5833%2014.1663C10.9167%2011.7775%2011.6736%209.32606%2012.8542%206.81217C14.0347%204.29829%2015.4167%202.13856%2017%200.333008C18.5833%202.13856%2019.9653%204.29829%2021.1458%206.81217C22.3264%209.32606%2023.0833%2011.7775%2023.4167%2014.1663C24.7222%2013.4441%2026.125%2012.9025%2027.625%2012.5413C29.125%2012.1802%2030.5833%2011.9997%2032%2011.9997H33.6667V13.6663C33.6667%2017.0552%2033.1805%2019.958%2032.2083%2022.3747C31.2361%2024.7913%2029.9653%2026.7913%2028.3958%2028.3747C26.8264%2029.958%2025.0486%2031.1733%2023.0625%2032.0205C21.0764%2032.8677%2019.0555%2033.4163%2017%2033.6663ZM16.9167%2030.2497C16.6111%2025.6386%2015.243%2022.1525%2012.8125%2019.7913C10.3819%2017.4302%207.36111%2015.9719%203.74999%2015.4163C4.05555%2020.1663%205.46527%2023.708%207.97916%2026.0413C10.493%2028.3747%2013.4722%2029.7775%2016.9167%2030.2497ZM17%2019.6663C17.4167%2019.0552%2017.9236%2018.4233%2018.5208%2017.7705C19.118%2017.1177%2019.6944%2016.5552%2020.25%2016.083C20.1944%2014.4997%2019.8819%2012.8469%2019.3125%2011.1247C18.743%209.40245%2017.9722%207.7219%2017%206.08301C16.0278%207.7219%2015.2569%209.40245%2014.6875%2011.1247C14.118%2012.8469%2013.8055%2014.4997%2013.75%2016.083C14.3055%2016.5552%2014.8889%2017.1177%2015.5%2017.7705C16.1111%2018.4233%2016.6111%2019.0552%2017%2019.6663ZM20.25%2029.4997C21.2778%2029.1663%2022.3472%2028.6802%2023.4583%2028.0413C24.5694%2027.4025%2025.6042%2026.5344%2026.5625%2025.4372C27.5208%2024.34%2028.3403%2022.9719%2029.0208%2021.333C29.7014%2019.6941%2030.1111%2017.7219%2030.25%2015.4163C27.6389%2015.8052%2025.3472%2016.6733%2023.375%2018.0205C21.4028%2019.3677%2019.8889%2021.083%2018.8333%2023.1663C19.1667%2024.0552%2019.4514%2025.0275%2019.6875%2026.083C19.9236%2027.1386%2020.1111%2028.2775%2020.25%2029.4997Z'%20fill='%23D8A47A'/%3e%3c/svg%3e" alt="Полный дизайн <br>интерьера" width="32" height="32"><span class="base-subtitle">Полный дизайн <br>интерьера</span><span class="base-text">Разработка концепции, планировка, подбор материалов и мебели.</span>
+                    </div>
+                  </div>
+          </div>
+          <div class="features__grid-item">
+                  <div class="feature-card">
+                    <div class="feature-card__wrapper"><img src="data:image/svg+xml,%3csvg%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17%2033.6663C14.9722%2033.4163%2012.9583%2032.8677%2010.9583%2032.0205C8.95833%2031.1733%207.17361%2029.958%205.60416%2028.3747C4.03472%2026.7913%202.76388%2024.7913%201.79166%2022.3747C0.819439%2019.958%200.333328%2017.0552%200.333328%2013.6663V11.9997H1.99999C3.41666%2011.9997%204.87499%2012.1802%206.37499%2012.5413C7.87499%2012.9025%209.27777%2013.4441%2010.5833%2014.1663C10.9167%2011.7775%2011.6736%209.32606%2012.8542%206.81217C14.0347%204.29829%2015.4167%202.13856%2017%200.333008C18.5833%202.13856%2019.9653%204.29829%2021.1458%206.81217C22.3264%209.32606%2023.0833%2011.7775%2023.4167%2014.1663C24.7222%2013.4441%2026.125%2012.9025%2027.625%2012.5413C29.125%2012.1802%2030.5833%2011.9997%2032%2011.9997H33.6667V13.6663C33.6667%2017.0552%2033.1805%2019.958%2032.2083%2022.3747C31.2361%2024.7913%2029.9653%2026.7913%2028.3958%2028.3747C26.8264%2029.958%2025.0486%2031.1733%2023.0625%2032.0205C21.0764%2032.8677%2019.0555%2033.4163%2017%2033.6663ZM16.9167%2030.2497C16.6111%2025.6386%2015.243%2022.1525%2012.8125%2019.7913C10.3819%2017.4302%207.36111%2015.9719%203.74999%2015.4163C4.05555%2020.1663%205.46527%2023.708%207.97916%2026.0413C10.493%2028.3747%2013.4722%2029.7775%2016.9167%2030.2497ZM17%2019.6663C17.4167%2019.0552%2017.9236%2018.4233%2018.5208%2017.7705C19.118%2017.1177%2019.6944%2016.5552%2020.25%2016.083C20.1944%2014.4997%2019.8819%2012.8469%2019.3125%2011.1247C18.743%209.40245%2017.9722%207.7219%2017%206.08301C16.0278%207.7219%2015.2569%209.40245%2014.6875%2011.1247C14.118%2012.8469%2013.8055%2014.4997%2013.75%2016.083C14.3055%2016.5552%2014.8889%2017.1177%2015.5%2017.7705C16.1111%2018.4233%2016.6111%2019.0552%2017%2019.6663ZM20.25%2029.4997C21.2778%2029.1663%2022.3472%2028.6802%2023.4583%2028.0413C24.5694%2027.4025%2025.6042%2026.5344%2026.5625%2025.4372C27.5208%2024.34%2028.3403%2022.9719%2029.0208%2021.333C29.7014%2019.6941%2030.1111%2017.7219%2030.25%2015.4163C27.6389%2015.8052%2025.3472%2016.6733%2023.375%2018.0205C21.4028%2019.3677%2019.8889%2021.083%2018.8333%2023.1663C19.1667%2024.0552%2019.4514%2025.0275%2019.6875%2026.083C19.9236%2027.1386%2020.1111%2028.2775%2020.25%2029.4997Z'%20fill='%23D8A47A'/%3e%3c/svg%3e" alt="Полный дизайн <br>интерьера" width="32" height="32"><span class="base-subtitle">Полный дизайн <br>интерьера</span><span class="base-text">Разработка концепции, планировка, подбор материалов и мебели.</span>
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+      <div class="features__grid-container">
+        <div class="features__grid features__grid--type-6">
+          <div class="features__grid-item">
+                  <div class="feature-card">
+                    <div class="feature-card__wrapper"><img src="data:image/svg+xml,%3csvg%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17%2033.6663C14.9722%2033.4163%2012.9583%2032.8677%2010.9583%2032.0205C8.95833%2031.1733%207.17361%2029.958%205.60416%2028.3747C4.03472%2026.7913%202.76388%2024.7913%201.79166%2022.3747C0.819439%2019.958%200.333328%2017.0552%200.333328%2013.6663V11.9997H1.99999C3.41666%2011.9997%204.87499%2012.1802%206.37499%2012.5413C7.87499%2012.9025%209.27777%2013.4441%2010.5833%2014.1663C10.9167%2011.7775%2011.6736%209.32606%2012.8542%206.81217C14.0347%204.29829%2015.4167%202.13856%2017%200.333008C18.5833%202.13856%2019.9653%204.29829%2021.1458%206.81217C22.3264%209.32606%2023.0833%2011.7775%2023.4167%2014.1663C24.7222%2013.4441%2026.125%2012.9025%2027.625%2012.5413C29.125%2012.1802%2030.5833%2011.9997%2032%2011.9997H33.6667V13.6663C33.6667%2017.0552%2033.1805%2019.958%2032.2083%2022.3747C31.2361%2024.7913%2029.9653%2026.7913%2028.3958%2028.3747C26.8264%2029.958%2025.0486%2031.1733%2023.0625%2032.0205C21.0764%2032.8677%2019.0555%2033.4163%2017%2033.6663ZM16.9167%2030.2497C16.6111%2025.6386%2015.243%2022.1525%2012.8125%2019.7913C10.3819%2017.4302%207.36111%2015.9719%203.74999%2015.4163C4.05555%2020.1663%205.46527%2023.708%207.97916%2026.0413C10.493%2028.3747%2013.4722%2029.7775%2016.9167%2030.2497ZM17%2019.6663C17.4167%2019.0552%2017.9236%2018.4233%2018.5208%2017.7705C19.118%2017.1177%2019.6944%2016.5552%2020.25%2016.083C20.1944%2014.4997%2019.8819%2012.8469%2019.3125%2011.1247C18.743%209.40245%2017.9722%207.7219%2017%206.08301C16.0278%207.7219%2015.2569%209.40245%2014.6875%2011.1247C14.118%2012.8469%2013.8055%2014.4997%2013.75%2016.083C14.3055%2016.5552%2014.8889%2017.1177%2015.5%2017.7705C16.1111%2018.4233%2016.6111%2019.0552%2017%2019.6663ZM20.25%2029.4997C21.2778%2029.1663%2022.3472%2028.6802%2023.4583%2028.0413C24.5694%2027.4025%2025.6042%2026.5344%2026.5625%2025.4372C27.5208%2024.34%2028.3403%2022.9719%2029.0208%2021.333C29.7014%2019.6941%2030.1111%2017.7219%2030.25%2015.4163C27.6389%2015.8052%2025.3472%2016.6733%2023.375%2018.0205C21.4028%2019.3677%2019.8889%2021.083%2018.8333%2023.1663C19.1667%2024.0552%2019.4514%2025.0275%2019.6875%2026.083C19.9236%2027.1386%2020.1111%2028.2775%2020.25%2029.4997Z'%20fill='%23D8A47A'/%3e%3c/svg%3e" alt="3D визуализация" width="32" height="32"><span class="base-subtitle">3D визуализация</span><span class="base-text">Создание реалистичных 3D моделей вашего будущего интерьера.</span>
+                    </div>
+                  </div>
+          </div>
+          <div class="features__grid-item">
+                  <div class="feature-card">
+                    <div class="feature-card__wrapper"><img src="data:image/svg+xml,%3csvg%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17%2033.6663C14.9722%2033.4163%2012.9583%2032.8677%2010.9583%2032.0205C8.95833%2031.1733%207.17361%2029.958%205.60416%2028.3747C4.03472%2026.7913%202.76388%2024.7913%201.79166%2022.3747C0.819439%2019.958%200.333328%2017.0552%200.333328%2013.6663V11.9997H1.99999C3.41666%2011.9997%204.87499%2012.1802%206.37499%2012.5413C7.87499%2012.9025%209.27777%2013.4441%2010.5833%2014.1663C10.9167%2011.7775%2011.6736%209.32606%2012.8542%206.81217C14.0347%204.29829%2015.4167%202.13856%2017%200.333008C18.5833%202.13856%2019.9653%204.29829%2021.1458%206.81217C22.3264%209.32606%2023.0833%2011.7775%2023.4167%2014.1663C24.7222%2013.4441%2026.125%2012.9025%2027.625%2012.5413C29.125%2012.1802%2030.5833%2011.9997%2032%2011.9997H33.6667V13.6663C33.6667%2017.0552%2033.1805%2019.958%2032.2083%2022.3747C31.2361%2024.7913%2029.9653%2026.7913%2028.3958%2028.3747C26.8264%2029.958%2025.0486%2031.1733%2023.0625%2032.0205C21.0764%2032.8677%2019.0555%2033.4163%2017%2033.6663ZM16.9167%2030.2497C16.6111%2025.6386%2015.243%2022.1525%2012.8125%2019.7913C10.3819%2017.4302%207.36111%2015.9719%203.74999%2015.4163C4.05555%2020.1663%205.46527%2023.708%207.97916%2026.0413C10.493%2028.3747%2013.4722%2029.7775%2016.9167%2030.2497ZM17%2019.6663C17.4167%2019.0552%2017.9236%2018.4233%2018.5208%2017.7705C19.118%2017.1177%2019.6944%2016.5552%2020.25%2016.083C20.1944%2014.4997%2019.8819%2012.8469%2019.3125%2011.1247C18.743%209.40245%2017.9722%207.7219%2017%206.08301C16.0278%207.7219%2015.2569%209.40245%2014.6875%2011.1247C14.118%2012.8469%2013.8055%2014.4997%2013.75%2016.083C14.3055%2016.5552%2014.8889%2017.1177%2015.5%2017.7705C16.1111%2018.4233%2016.6111%2019.0552%2017%2019.6663ZM20.25%2029.4997C21.2778%2029.1663%2022.3472%2028.6802%2023.4583%2028.0413C24.5694%2027.4025%2025.6042%2026.5344%2026.5625%2025.4372C27.5208%2024.34%2028.3403%2022.9719%2029.0208%2021.333C29.7014%2019.6941%2030.1111%2017.7219%2030.25%2015.4163C27.6389%2015.8052%2025.3472%2016.6733%2023.375%2018.0205C21.4028%2019.3677%2019.8889%2021.083%2018.8333%2023.1663C19.1667%2024.0552%2019.4514%2025.0275%2019.6875%2026.083C19.9236%2027.1386%2020.1111%2028.2775%2020.25%2029.4997Z'%20fill='%23D8A47A'/%3e%3c/svg%3e" alt="Полный дизайн интерьера" width="32" height="32"><span class="base-subtitle">Полный дизайн интерьера</span><span class="base-text">Разработка концепции, планировка, подбор материалов и мебели.</span>
+                    </div>
+                  </div>
+          </div>
+          <div class="features__grid-item">
+                  <div class="feature-card">
+                    <div class="feature-card__wrapper"><img src="data:image/svg+xml,%3csvg%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17%2033.6663C14.9722%2033.4163%2012.9583%2032.8677%2010.9583%2032.0205C8.95833%2031.1733%207.17361%2029.958%205.60416%2028.3747C4.03472%2026.7913%202.76388%2024.7913%201.79166%2022.3747C0.819439%2019.958%200.333328%2017.0552%200.333328%2013.6663V11.9997H1.99999C3.41666%2011.9997%204.87499%2012.1802%206.37499%2012.5413C7.87499%2012.9025%209.27777%2013.4441%2010.5833%2014.1663C10.9167%2011.7775%2011.6736%209.32606%2012.8542%206.81217C14.0347%204.29829%2015.4167%202.13856%2017%200.333008C18.5833%202.13856%2019.9653%204.29829%2021.1458%206.81217C22.3264%209.32606%2023.0833%2011.7775%2023.4167%2014.1663C24.7222%2013.4441%2026.125%2012.9025%2027.625%2012.5413C29.125%2012.1802%2030.5833%2011.9997%2032%2011.9997H33.6667V13.6663C33.6667%2017.0552%2033.1805%2019.958%2032.2083%2022.3747C31.2361%2024.7913%2029.9653%2026.7913%2028.3958%2028.3747C26.8264%2029.958%2025.0486%2031.1733%2023.0625%2032.0205C21.0764%2032.8677%2019.0555%2033.4163%2017%2033.6663ZM16.9167%2030.2497C16.6111%2025.6386%2015.243%2022.1525%2012.8125%2019.7913C10.3819%2017.4302%207.36111%2015.9719%203.74999%2015.4163C4.05555%2020.1663%205.46527%2023.708%207.97916%2026.0413C10.493%2028.3747%2013.4722%2029.7775%2016.9167%2030.2497ZM17%2019.6663C17.4167%2019.0552%2017.9236%2018.4233%2018.5208%2017.7705C19.118%2017.1177%2019.6944%2016.5552%2020.25%2016.083C20.1944%2014.4997%2019.8819%2012.8469%2019.3125%2011.1247C18.743%209.40245%2017.9722%207.7219%2017%206.08301C16.0278%207.7219%2015.2569%209.40245%2014.6875%2011.1247C14.118%2012.8469%2013.8055%2014.4997%2013.75%2016.083C14.3055%2016.5552%2014.8889%2017.1177%2015.5%2017.7705C16.1111%2018.4233%2016.6111%2019.0552%2017%2019.6663ZM20.25%2029.4997C21.2778%2029.1663%2022.3472%2028.6802%2023.4583%2028.0413C24.5694%2027.4025%2025.6042%2026.5344%2026.5625%2025.4372C27.5208%2024.34%2028.3403%2022.9719%2029.0208%2021.333C29.7014%2019.6941%2030.1111%2017.7219%2030.25%2015.4163C27.6389%2015.8052%2025.3472%2016.6733%2023.375%2018.0205C21.4028%2019.3677%2019.8889%2021.083%2018.8333%2023.1663C19.1667%2024.0552%2019.4514%2025.0275%2019.6875%2026.083C19.9236%2027.1386%2020.1111%2028.2775%2020.25%2029.4997Z'%20fill='%23D8A47A'/%3e%3c/svg%3e" alt="Полный дизайн интерьера" width="32" height="32"><span class="base-subtitle">Полный дизайн интерьера</span><span class="base-text">Разработка концепции, планировка, подбор материалов и мебели.</span>
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+      <div class="features__grid-container">
+        <div class="features__grid features__grid--type-7"> 
+          <div class="features__grid-item">
+                  <div class="feature-card" style="background-image:url('./assets/img/features-mock-img.png')">
+                    <div class="feature-card__wrapper"><span class="base-subtitle">Полный дизайн интерьера</span><span class="base-text">Разработка концепции, планировка, подбор материалов и мебели.</span>
+                    </div>
+                  </div>
+          </div>
+          <div class="features__grid-item">
+                  <div class="feature-card" style="background-image:url('./assets/img/features-mock-img.png')">
+                    <div class="feature-card__wrapper"><span class="base-subtitle">Полный дизайн интерьера</span><span class="base-text">Разработка концепции, планировка, подбор материалов и мебели.</span>
+                    </div>
+                  </div>
+          </div>
+          <div class="features__grid-item">
+                  <div class="feature-card" style="background-image:url('./assets/img/features-mock-img.png')">
+                    <div class="feature-card__wrapper"><span class="base-subtitle">Полный дизайн интерьера</span><span class="base-text">Разработка концепции, планировка, подбор материалов и мебели.</span>
+                    </div>
+                  </div>
+          </div>
+          <div class="features__grid-item">
+                  <div class="feature-card --content-position-center --content-align-center --content-color-light" style="background-image:url('./assets/img/features-mock-img.png')">
+                    <div class="feature-card__wrapper"><img src="data:image/svg+xml,%3csvg%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17%2033.6663C14.9722%2033.4163%2012.9583%2032.8677%2010.9583%2032.0205C8.95833%2031.1733%207.17361%2029.958%205.60416%2028.3747C4.03472%2026.7913%202.76388%2024.7913%201.79166%2022.3747C0.819439%2019.958%200.333328%2017.0552%200.333328%2013.6663V11.9997H1.99999C3.41666%2011.9997%204.87499%2012.1802%206.37499%2012.5413C7.87499%2012.9025%209.27777%2013.4441%2010.5833%2014.1663C10.9167%2011.7775%2011.6736%209.32606%2012.8542%206.81217C14.0347%204.29829%2015.4167%202.13856%2017%200.333008C18.5833%202.13856%2019.9653%204.29829%2021.1458%206.81217C22.3264%209.32606%2023.0833%2011.7775%2023.4167%2014.1663C24.7222%2013.4441%2026.125%2012.9025%2027.625%2012.5413C29.125%2012.1802%2030.5833%2011.9997%2032%2011.9997H33.6667V13.6663C33.6667%2017.0552%2033.1805%2019.958%2032.2083%2022.3747C31.2361%2024.7913%2029.9653%2026.7913%2028.3958%2028.3747C26.8264%2029.958%2025.0486%2031.1733%2023.0625%2032.0205C21.0764%2032.8677%2019.0555%2033.4163%2017%2033.6663ZM16.9167%2030.2497C16.6111%2025.6386%2015.243%2022.1525%2012.8125%2019.7913C10.3819%2017.4302%207.36111%2015.9719%203.74999%2015.4163C4.05555%2020.1663%205.46527%2023.708%207.97916%2026.0413C10.493%2028.3747%2013.4722%2029.7775%2016.9167%2030.2497ZM17%2019.6663C17.4167%2019.0552%2017.9236%2018.4233%2018.5208%2017.7705C19.118%2017.1177%2019.6944%2016.5552%2020.25%2016.083C20.1944%2014.4997%2019.8819%2012.8469%2019.3125%2011.1247C18.743%209.40245%2017.9722%207.7219%2017%206.08301C16.0278%207.7219%2015.2569%209.40245%2014.6875%2011.1247C14.118%2012.8469%2013.8055%2014.4997%2013.75%2016.083C14.3055%2016.5552%2014.8889%2017.1177%2015.5%2017.7705C16.1111%2018.4233%2016.6111%2019.0552%2017%2019.6663ZM20.25%2029.4997C21.2778%2029.1663%2022.3472%2028.6802%2023.4583%2028.0413C24.5694%2027.4025%2025.6042%2026.5344%2026.5625%2025.4372C27.5208%2024.34%2028.3403%2022.9719%2029.0208%2021.333C29.7014%2019.6941%2030.1111%2017.7219%2030.25%2015.4163C27.6389%2015.8052%2025.3472%2016.6733%2023.375%2018.0205C21.4028%2019.3677%2019.8889%2021.083%2018.8333%2023.1663C19.1667%2024.0552%2019.4514%2025.0275%2019.6875%2026.083C19.9236%2027.1386%2020.1111%2028.2775%2020.25%2029.4997Z'%20fill='%23D8A47A'/%3e%3c/svg%3e" alt="Полный дизайн интерьера" width="32" height="32"><span class="base-subtitle">Полный дизайн интерьера</span><span class="base-text">Разработка концепции, планировка, подбор материалов и мебели.</span>
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="base-section about --underlined">
+    <div class="container">
+      <div class="base-section__header">
+        <h2 class="base-title">О компании</h2>
+      </div>
+      <div class="about__grid-container">
+        <div class="about__grid">
+          <div class="about__grid-item"><img src="./assets/img/about-mock-img.png" alt="about-img" height="570" width="760"></div>
+          <div class="about__grid-item">
+            <p>Наша студия интерьеров была основана с целью создания уютных, стильных и функциональных пространств, которые приносят радость и вдохновение каждому дню. За годы работы мы накопили огромный опыт и реализовали множество проектов различной сложности, от небольших квартир до больших загородных домов. Мы гордимся тем, что наши клиенты довольны результатом и рекомендуют нас своим друзьям и знакомым.</p>
+            <div class="about__features-list">
+                    <div class="simple-card"><span class="base-subtitle">Качество и надежность</span><span class="base-text">Мы используем только высококачественные материалы и современные технологии, чтобы гарантировать долговечность и надежность наших проектов.</span></div>
+                    <div class="simple-card"><span class="base-subtitle">Индивидуальный подход</span><span class="base-text">Мы внимательно слушаем каждого клиента, чтобы понять его потребности и предложить наилучшие решения.</span></div>
+                    <div class="simple-card"><span class="base-subtitle">Креативность и инновации</span><span class="base-text">Мы постоянно ищем новые идеи и решения, чтобы создавать интерьеры, которые выделяются своей оригинальностью и современностью.</span></div>
+                    <div class="simple-card"><span class="base-subtitle">Ответственность и пунктуальность</span><span class="base-text">Мы ценим время наших клиентов и стремимся выполнять все работы в оговоренные сроки.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about__grid-container">
+        <div class="about__grid --align-center">
+          <p>Наша студия интерьеров была основана с целью создания уютных, стильных и функциональных пространств, которые приносят радость и вдохновение каждому дню. За годы работы мы накопили огромный опыт и реализовали множество проектов различной сложности, от небольших квартир до больших загородных домов. Мы гордимся тем, что наши клиенты довольны результатом и рекомендуют нас своим друзьям и знакомым.</p>
+          <div class="about__features-list">
+                  <div class="simple-card"><span class="base-subtitle">Качество и надежность</span><span class="base-text">Мы используем только высококачественные материалы и современные технологии, чтобы гарантировать долговечность и надежность наших проектов.</span></div>
+                  <div class="simple-card"><span class="base-subtitle">Индивидуальный подход</span><span class="base-text">Мы внимательно слушаем каждого клиента, чтобы понять его потребности и предложить наилучшие решения.</span></div>
+                  <div class="simple-card"><span class="base-subtitle">Креативность и инновации</span><span class="base-text">Мы постоянно ищем новые идеи и решения, чтобы создавать интерьеры, которые выделяются своей оригинальностью и современностью.</span></div>
+                  <div class="simple-card"><span class="base-subtitle">Ответственность и пунктуальность</span><span class="base-text">Мы ценим время наших клиентов и стремимся выполнять все работы в оговоренные сроки.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="about__grid-container">
+        <div class="about__grid --reversed">
+          <div class="about__grid-item"><img src="./assets/img/about-mock-img.png" alt="about-img" height="570" width="760"></div>
+          <div class="about__grid-item">
+            <div class="about__features-list --column">
+                    <div class="simple-card"><span class="base-subtitle">Качество и надежность</span><span class="base-text">Мы используем только высококачественные материалы и современные технологии, чтобы гарантировать долговечность и надежность наших проектов.</span></div>
+                    <div class="simple-card"><span class="base-subtitle">Индивидуальный подход</span><span class="base-text">Мы внимательно слушаем каждого клиента, чтобы понять его потребности и предложить наилучшие решения.</span></div>
+                    <div class="simple-card"><span class="base-subtitle">Креативность и инновации</span><span class="base-text">Мы постоянно ищем новые идеи и решения, чтобы создавать интерьеры, которые выделяются своей оригинальностью и современностью.</span></div>
+                    <div class="simple-card"><span class="base-subtitle">Ответственность и пунктуальность</span><span class="base-text">Мы ценим время наших клиентов и стремимся выполнять все работы в оговоренные сроки.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about__grid-container">
+        <div class="about__grid --align-center">
+          <div class="about__grid-item"><img src="./assets/img/about-mock-img.png" alt="about-img" height="570" width="760"></div>
+          <div class="about__grid-item">
+            <p>Наша студия интерьеров была основана с целью создания уютных, стильных и функциональных пространств, которые приносят радость и вдохновение каждому дню. За годы работы мы накопили огромный опыт и реализовали множество проектов различной сложности, от небольших квартир до больших загородных домов. Мы гордимся тем, что наши клиенты довольны результатом и рекомендуют нас своим друзьям и знакомым.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="base-section clients-preview --underlined --full-widt --fille --bordered">
+    <div class="container">
+      <div class="base-section__header">
+        <h2 class="base-title">Наши клиенты</h2>
+      </div>
+      <div class="clients-preview__grid --align-center --filled-bg --bordered --image-size-xs">
+        <div class="clients-preview__grid-item"><img src="./assets/img/client-mock-img-1.svg" alt="" width="240" height="120"></div>
+        <div class="clients-preview__grid-item"><img src="data:image/svg+xml,%3csvg%20width='300'%20height='84'%20viewBox='0%200%20300%2084'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M109.951%2058.1113H117.832V44.6008H121.259L129.629%2058.1113H138.049L128.797%2043.2303C132.909%2042.0065%20135.993%2039.2162%20135.993%2033.9295V33.7337C135.993%2026.489%20130.755%2023.1113%20122.483%2023.1113H109.951V58.1113ZM117.832%2039.2162V29.1813H122.287C126.105%2029.1813%20128.259%2030.4051%20128.259%2033.9784V34.1743C128.259%2037.552%20126.252%2039.2162%20122.287%2039.2162H117.832Z'%20fill='%23CDCDCD'/%3e%3cpath%20d='M151.544%2060.1113C158.615%2060.1113%20163.066%2056.996%20163.907%2051.408H157.132C156.687%2053.5839%20155.055%2055.018%20151.742%2055.018C147.835%2055.018%20145.511%2052.5454%20145.313%2048.2433H163.956V46.2652C163.956%2037.0178%20158.022%2033.1113%20151.346%2033.1113C143.83%2033.1113%20138.044%2038.4025%20138.044%2046.5619V46.9574C138.044%2055.2158%20143.731%2060.1113%20151.544%2060.1113ZM145.412%2043.8421C145.956%2040.1827%20148.132%2038.0564%20151.346%2038.0564C154.758%2038.0564%20156.736%2039.9355%20156.984%2043.8421H145.412Z'%20fill='%23CDCDCD'/%3e%3cpath%20d='M168.089%2057.1113H174.911V21.1113H168.089V57.1113Z'%20fill='%23CDCDCD'/%3e%3cpath%20d='M189.163%2060.1113C193.512%2060.1113%20196.191%2058.0888%20197.556%2055.4092V59.5552H204.837V33.1113H197.556V48.6338C197.556%2052.5272%20195.129%2054.4485%20192.046%2054.4485C188.911%2054.4485%20187.443%2052.7293%20187.443%2049.1394V33.1113H180.163V50.1507C180.163%2057.0776%20184.006%2060.1113%20189.163%2060.1113Z'%20fill='%23CDCDCD'/%3e%3cpath%20d='M209.084%2059.1113H216.132V44.0945C216.132%2040.6441%20218.319%2038.8944%20221.04%2038.8944C223.519%2038.8944%20225.025%2040.3524%20225.025%2043.6086V59.1113H232.024V44.0945C232.024%2040.6441%20234.21%2038.8944%20236.931%2038.8944C239.459%2038.8944%20240.917%2040.3524%20240.917%2043.6086V59.1113H247.915V42.831C247.915%2036.0758%20244.271%2033.1113%20239.556%2033.1113C236.349%2033.1113%20233.045%2034.472%20231.003%2037.5338C229.788%2034.5207%20227.261%2033.1113%20223.908%2033.1113C220.116%2033.1113%20217.395%2035.201%20216.132%2037.5823V33.6944H209.084V59.1113Z'%20fill='%23CDCDCD'/%3e%3cpath%20d='M265.544%2060.1113C272.616%2060.1113%20277.067%2056.996%20277.906%2051.408H271.132C270.686%2053.5839%20269.055%2055.018%20265.741%2055.018C261.835%2055.018%20259.511%2052.5454%20259.314%2048.2433H277.957V46.2652C277.957%2037.0178%20272.021%2033.1113%20265.346%2033.1113C257.829%2033.1113%20252.043%2038.4025%20252.043%2046.5619V46.9574C252.043%2055.2158%20257.731%2060.1113%20265.544%2060.1113ZM259.412%2043.8421C259.957%2040.1827%20262.133%2038.0564%20265.346%2038.0564C268.758%2038.0564%20270.737%2039.9355%20270.985%2043.8421H259.412Z'%20fill='%23CDCDCD'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M82.1818%2025.5193L81.7058%2024.6693C81.092%2023.6414%2080.2261%2022.7871%2079.19%2022.1873L56.376%209.02933C55.3429%208.4301%2054.1703%208.11348%2052.976%208.11133H51.99C50.7957%208.11348%2049.6231%208.4301%2048.59%209.02933L25.7761%2022.2213C24.7458%2022.8171%2023.89%2023.6731%2023.2941%2024.7033L22.8181%2025.5533C22.2189%2026.5863%2021.9023%2027.759%2021.9001%2028.9532V55.3032C21.9023%2056.4975%2022.2189%2057.6701%2022.8181%2058.7032L23.2941%2059.5532C23.9054%2060.5715%2024.7578%2061.4239%2025.7761%2062.0352L48.624%2075.193C49.652%2075.8047%2050.828%2076.1223%2052.024%2076.111H52.976C54.1703%2076.1089%2055.3429%2075.7923%2056.376%2075.193L79.19%2062.0012C80.2304%2061.4187%2081.0895%2060.5598%2081.6718%2059.5192L82.1818%2058.6692C82.7739%2057.6331%2083.0901%2056.4623%2083.0998%2055.2692V28.9192C83.0979%2027.725%2082.7812%2026.5523%2082.1818%2025.5193ZM51.99%2014.9112H52.976L72.9%2026.4032L52.5%2038.167L32.1002%2026.4032L51.99%2014.9112ZM55.9%2067.6114L75.7898%2056.1194L76.2998%2055.2693V32.2855L55.9%2044.0833V67.6114Z'%20fill='%23CDCDCD'/%3e%3c/svg%3e" alt="" width="240" height="120"></div>
+        <div class="clients-preview__grid-item"><img src="./assets/img/client-mock-img-1.svg" alt="" width="240" height="120"></div>
+        <div class="clients-preview__grid-item"><img src="./assets/img/features-mock-img.png" alt="" width="240" height="120"></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><span>Footer</span></footer>
