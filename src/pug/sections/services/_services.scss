@@ -1,0 +1,88 @@
+@use "@pug/components/_ui/cards/service-card/service-card";
+@forward "@styles/_extends/flexbox";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_vars/scoped" as *;
+@use "@styles/_mixins/block-overlay" as *;
+
+$service-card-img-width: 600px;
+$service-card-height: 500px;
+$service-card-scrollbar-width: 4px;
+$service-card-scrollbar-border-radius: 30px;
+
+.services {
+  container: services-container / inline-size;
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+
+    @include container-up("services-container", $tablet-width) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    @include container-up("services-container", $laptop-width) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.--align-content-center {
+      .service-card {
+        &__header {
+          text-align: center;
+
+          &-title::after {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+
+        &__body {
+          text-align: center;
+
+          & ol,
+          & ul {
+            text-align: left;
+          }
+        }
+
+        &__footer {
+          align-items: center;
+        }
+      }
+    }
+
+    &.--grid-type-2,
+    &.--grid-type-3 {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-lg);
+
+      @include container-up("services-container", $laptop-width) {
+        .service-card {
+          flex-direction: row;
+          gap: 64px;
+
+          &__section--image {
+            position: sticky;
+            top: 0;
+            height: fit-content;
+          }
+        }
+      }
+    }
+
+    &.--grid-type-3 {
+      @include container-up("services-container", $laptop-width) {
+        .services__grid-item:nth-child(even) {
+          .service-card {
+            flex-direction: row-reverse;
+          }
+        }
+      }
+    }
+  }
+}
