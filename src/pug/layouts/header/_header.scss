@@ -161,14 +161,6 @@
         grid-area: burger-button;
         justify-self: right;
       }
-
-      &__mobile-menu {
-        display: none;
-
-        &-content {
-          display: none;
-        }
-      }
     }
 
     @include container-up(header-container, $laptop-width) {
@@ -193,14 +185,18 @@
         background-color: rgba(0, 0, 0, 0);
         grid-area: navigation;
         justify-self: center;
+        align-content: center;
+        opacity: 1;
+        z-index: 1;
 
-        &-wrapper {
+        &-content {
           position: relative;
           display: block;
           width: 100%;
           max-width: 100%;
           height: fit-content;
           padding: 0;
+          transform: translateX(0);
         }
 
         &-header {
