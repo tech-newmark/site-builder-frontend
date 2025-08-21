@@ -1,0 +1,8 @@
+mixin address(data)
+
+  address.address(class=data.class)
+    span.address-location!=data.city
+    .address-wrapper
+      a.address-phone(href="tel:+79999999999")!=data.phone
+      a.address-email(href="mailto:info@test.ru")!=data.email
+    include ../social/social

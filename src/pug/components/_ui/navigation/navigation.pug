@@ -1,0 +1,7 @@
+mixin nav(data)
+
+  nav.navigation(class=data.class)
+    ul.navigation__list
+      each item in data.items
+        li.navigation__item
+          a.navigation__link(href="#")!= item
