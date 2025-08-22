@@ -5,7 +5,8 @@
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    row-gap: 16px;
+    column-gap: 40px;
   }
 
   &__link {

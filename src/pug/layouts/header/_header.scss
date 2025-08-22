@@ -26,6 +26,7 @@
   .header__call-button {
     font-size: 16px;
     padding: 16px 28px;
+    width: fit-content;
   }
 
   &__logo {
@@ -64,7 +65,7 @@
   &__address,
   &__social,
   &__navigation,
-  &__call-button {
+  &__call-button--tablet {
     display: none;
   }
 
@@ -149,13 +150,9 @@
   }
 
   @include container-up(header-container, $tablet-width) {
-    &__call-button {
+    &__call-button--tablet {
       display: block;
-      width: fit-content;
-
-      &--tablet {
-        margin-left: auto;
-      }
+      margin-left: auto;
     }
   }
 
@@ -191,7 +188,7 @@
       justify-self: center;
     }
 
-    &__call-button {
+    &__call-button--tablet {
       grid-area: call;
     }
 
@@ -227,6 +224,7 @@
 
         &__address {
           grid-area: address;
+          column-gap: clamp(40px, 4vw, 80px);
           padding-bottom: 0;
           border-bottom: none;
         }
@@ -241,6 +239,10 @@
           grid-area: social;
         }
       }
+    }
+
+    .address__wrapper {
+      column-gap: clamp(40px, 4vw, 80px);
     }
 
     .address__social {
@@ -268,6 +270,7 @@
           grid-area: address;
           padding-bottom: 0;
           border-bottom: none;
+          column-gap: clamp(40px, 4vw, 80px);
         }
 
         &__navigation {
@@ -279,6 +282,10 @@
           display: flex;
           grid-area: social;
         }
+      }
+
+      .address__wrapper {
+        column-gap: clamp(40px, 4vw, 80px);
       }
 
       .address__social {
@@ -316,7 +323,7 @@
           flex-wrap: wrap;
         }
 
-        &__call-button {
+        &__call-button--tablet {
           grid-area: call;
         }
 
