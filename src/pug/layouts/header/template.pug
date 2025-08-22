@@ -1,21 +1,56 @@
 include ../../components/_ui/navigation/navigation
 include ../../components/_ui/buttons/btn/btn
 include ../../components/_ui/address/address
+include ../../components/_ui/social/social
 
-.header__container
+
+header.header.--grid-type-2.--sticky-header
   .container
-    header.header
-      +address({class: "header__address", city: "г. Санкт-Петербург", phone: "8 999 999 99 99", email: "info@test.ru"})
-      a.header__logo-link(href="/")
-        img(class="header__logo" src="./assets/img/main-logo.svg" width="95" height="25" alt="Логотип")
-      +btn({tag: "button", type: "button", cls: "btn-primary header__call-button", title: "Заказать звонок"})
-      .header__mobile-menu
-        .header__mobile-menu-content
-          .header__mobile-menu-header
-            a.header__logo-link(href="/")
-              img(class="header__logo" src="./assets/img/main-logo.svg" width="95" height="25" alt="Логотип")
-            button.header__action-button.header__mobile-menu-close-button(type="button" aria-label="Закрыть меню сайта")
-          +nav({class: "header__navigation", items: ["Акции", "Услуги", "Доставка", "Контакты", "О компании"]})
-          +address({class: "header__mobile-menu-address", city: "г. Санкт-Петербург", phone: "8 999 999 99 99", email: "info@test.ru"})
-      button.header__action-button.header__burger-button(type="button" aria-label="Открыть меню сайта")
+    a.header__logo(href="/")
+      img(class="header__logo--image", src="./assets/img/main-logo.svg" width="95" height="25" alt="Логотип")
+
+    +address({
+      class: "header__address",
+      city: "г. Санкт-Петербург",
+      phone: "8 999 999 99 99",
+      email: "info@test.ru"})
+
+    +social({
+      class: "header__social",
+      items: [
+        { social: "Instagram", modifier: "instagram", link: "#" },
+        { social: "WhatsApp", modifier: "whatsapp", link: "#" },
+        { social: "Telegram", modifier: "telegram", link: "#" }
+      ]})
+
+    +nav({class: "header__navigation",
+      items: ["Акции", "Услуги", "Доставка", "Контакты", "О компании"]})
+
+    +btn({tag: "button",
+      type: "button",
+      cls: "btn-primary header__call-button header__call-button--tablet",
+      title: "Заказать звонок"})
+
+    button.header__action-button.header__burger-button(type="button" aria-label="Открыть меню сайта")
+
+    .header__mobile-menu
+      .header__mobile-menu-content
+        .header__mobile-menu-header
+          a.header__logo-link(href="/")
+            img(class="header__logo" src="./assets/img/main-logo.svg" width="95" height="25" alt="Логотип")
+          button.header__action-button.header__mobile-menu-close-button(type="button" aria-label="Закрыть меню сайта")
+        +nav({class: "header__mobile-menu-navigation", items: ["Акции", "Услуги", "Доставка", "Контакты", "О компании"]})
+        +address({class: "header__mobile-menu-address", city: "г. Санкт-Петербург", phone: "8 999 999 99 99", email: "info@test.ru"})
+        +social({
+            class: "header__mobile-menu-social",
+            items: [
+              { social: "Instagram", modifier: "instagram", link: "#" },
+              { social: "WhatsApp", modifier: "whatsapp", link: "#" },
+              { social: "Telegram", modifier: "telegram", link: "#" }
+            ]})
+        +btn({tag: "button",
+          type: "button",
+          cls: "btn-primary header__call-button",
+          title: "Заказать звонок"})
+
 

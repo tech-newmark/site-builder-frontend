@@ -1,9 +1,7 @@
-@use "@pug/components/_ui/social/social";
-
 .address {
-  &-location,
-  &-phone,
-  &-email {
+  &__location,
+  &__phone,
+  &__email {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -21,22 +19,23 @@
     }
   }
 
-  &-location::before {
+  &__location::before {
     background-image: url("@img/location.svg");
   }
 
-  &-email::before {
+  &__email::before {
     background-image: url("@img/email.svg");
   }
 
-  &-phone::before {
+  &__phone::before {
     background-image: url("@img/phone.svg");
   }
 
-  &-wrapper {
+  &__wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 16px;
+    row-gap: 8px;
+    column-gap: 16px;
   }
 }

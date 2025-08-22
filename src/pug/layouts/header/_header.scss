@@ -7,227 +7,341 @@
 
 @use "@pug/components/_ui/navigation/navigation";
 @use "@pug/components/_ui/address/address";
+@use "@pug/components/_ui/social/social";
 
-.header__container {
+.header {
+  padding: 8px 0;
+
   container: header-container / inline-size;
 
-  .header {
+  .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    align-items: center;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 0;
+    gap: clamp(8px, 2vw, 16px);
+  }
 
-    &__address {
-      display: none;
+  .header__call-button {
+    font-size: 16px;
+    padding: 16px 28px;
+  }
+
+  &__logo {
+    @extend %base-hover-effect;
+  }
+
+  &__logo-image {
+    @include container-up(header-container, $tablet-width) {
+      width: 132px;
+      height: 40px;
     }
+  }
 
-    &__logo-link {
-      @extend %base-hover-effect;
+  &__action-button {
+    display: block;
+    width: 40px;
+    aspect-ratio: 1;
+    padding: 0;
+    background-color: transparent;
+    background-size: 24px 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    @extend %base-hover-effect;
+
+    @include container-up(header-container, $tablet-width) {
+      width: 48px;
     }
+  }
 
-    &__logo {
-      @include container-up(header-container, $tablet-width) {
-        width: 132px;
-        height: 40px;
-      }
-    }
+  &__address {
+    font-size: 14px;
+  }
 
-    &__action-button {
-      display: block;
-      width: 40px;
-      aspect-ratio: 1;
-      padding: 0;
-      background-color: var(--white-color);
-      background-size: 24px 24px;
-      background-position: center;
-      background-repeat: no-repeat;
-      border: 2px solid var(--primary-color);
-      border-radius: 10px;
-      @extend %base-hover-effect;
+  &__address,
+  &__social,
+  &__navigation,
+  &__call-button {
+    display: none;
+  }
 
-      @include container-up(header-container, $tablet-width) {
-        width: 48px;
-      }
-    }
+  &__burger-button {
+    background-image: url("@img/burger-menu.svg");
+  }
 
-    &__mobile-menu {
-      display: block;
+  &__mobile-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--slow-transition);
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
       position: fixed;
-      top: 0;
-      left: 0;
+      height: 100vh;
+      padding: var(--container-offset);
+      background-color: var(--white-color);
       width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: -1;
-      opacity: 0;
-      transition: opacity var(--slow-transition);
+      max-width: 440px;
+      transform: translateX(-100vw);
+      transition: transform var(--slow-transition);
+    }
 
-      &-content {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        position: fixed;
-        height: 100vh;
-        padding: var(--container-offset);
-        background-color: var(--white-color);
-        width: 95%;
-        max-width: 680px;
-        transform: translateX(-100vw);
-        transition: transform var(--slow-transition);
+    &-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &-close-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        background-color: var(--primary-color);
+        border-radius: 2px;
       }
 
-      &-header {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+      &::before {
+        transform: rotate(45deg);
       }
 
-      &-close-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-
-        &::before,
-        &::after {
-          content: "";
-          position: absolute;
-          width: 25px;
-          height: 2px;
-          background-color: var(--primary-color);
-          border-radius: 2px;
-        }
-
-        &::before {
-          transform: rotate(45deg);
-        }
-
-        &::after {
-          transform: rotate(-45deg);
-        }
+      &::after {
+        transform: rotate(-45deg);
       }
+    }
 
+    &-navigation {
       .navigation__list {
         flex-direction: column;
       }
+    }
 
-      &-address {
-        display: flex;
-        flex-direction: column;
-        margin-top: auto;
-        gap: 16px;
-      }
+    &-address {
+      display: flex;
+      flex-direction: column;
+      margin-top: auto;
+      gap: 16px;
 
-      .address-wrapper {
+      .address__wrapper {
         flex-direction: column;
         align-items: flex-start;
-        font-size: 14px;
       }
     }
+  }
 
+  @include container-up(header-container, $tablet-width) {
     &__call-button {
-      display: none;
-    }
+      display: block;
+      width: fit-content;
 
-    &__burger-button {
-      background-image: url("@img/burger-menu.svg");
+      &--tablet {
+        margin-left: auto;
+      }
     }
+  }
 
-    @include container-up(header-container, $tablet-width) {
+  @include container-up(header-container, $laptop-width) {
+    .container {
       display: grid;
       grid-template-rows: repeat(2, auto);
-      grid-template-columns: repeat(2, auto);
-      grid-template-areas:
-        "address address"
-        "logo burger-button";
-
-      &__address {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        grid-area: address;
-        padding-bottom: 8px;
-        border-bottom: 1px solid var(--light-color);
-      }
-
-      &__logo-link {
-        grid-area: logo;
-      }
-
-      &__burger-button {
-        grid-area: burger-button;
-        justify-self: right;
-      }
-    }
-
-    @include container-up(header-container, $laptop-width) {
       grid-template-columns: auto 1fr auto;
       grid-template-areas:
         "address address address"
-        "logo navigation button";
-      gap: 8px 32px;
-      align-items: center;
+        "logo navigation call";
+      row-gap: 8px;
+      column-gap: 32px;
+    }
 
-      &__address {
-        grid-area: address;
+    &__logo {
+      grid-area: logo;
+    }
+
+    &__address {
+      grid-area: address;
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 4px;
+      column-gap: 16px;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--light-color);
+    }
+
+    &__navigation {
+      display: block;
+      justify-self: center;
+    }
+
+    &__call-button {
+      grid-area: call;
+    }
+
+    &__burger-button {
+      display: none;
+    }
+
+    &__mobile-menu {
+      display: none;
+    }
+  }
+
+  .navigation__list {
+    width: fit-content;
+  }
+
+  &.--grid-type-2 {
+    @include container-up(header-container, $laptop-width) {
+      .container {
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: auto 1fr auto auto;
+        grid-template-areas:
+          "logo address social call"
+          "logo navigation social call";
+        gap: 8px 32px;
+        justify-items: left;
       }
 
-      &__logo-link {
-        grid-area: logo;
-      }
-
-      &__mobile-menu {
-        display: block;
-        position: relative;
-        background-color: rgba(0, 0, 0, 0);
-        grid-area: navigation;
-        justify-self: center;
-        align-content: center;
-        opacity: 1;
-        z-index: 1;
-
-        &-content {
-          position: relative;
-          display: block;
-          width: 100%;
-          max-width: 100%;
-          height: fit-content;
-          padding: 0;
-          transform: translateX(0);
+      .header {
+        &__logo {
+          grid-area: logo;
         }
 
-        &-header {
-          display: none;
+        &__address {
+          grid-area: address;
+          padding-bottom: 0;
+          border-bottom: none;
         }
 
-        .header__navigation {
-          .navigation__list {
-            margin-left: auto;
-            margin-right: auto;
-            width: fit-content;
-            flex-direction: row;
-          }
+        &__navigation {
+          grid-area: navigation;
+          justify-self: left;
         }
 
-        &-address {
-          display: none;
+        &__social {
+          display: flex;
+          grid-area: social;
         }
       }
+    }
 
-      &__call-button {
-        display: block;
-        grid-area: button;
-        justify-self: right;
-        width: fit-content;
-        max-width: 250px;
+    .address__social {
+      display: none;
+    }
+  }
+
+  &.--grid-type-3 {
+    @include container-up(header-container, $laptop-width) {
+      .container {
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: auto 1fr auto auto;
+        grid-template-areas:
+          "logo address social call"
+          "logo navigation social call";
+        gap: 8px 32px;
+        justify-items: center;
+      }
+      .header {
+        &__logo {
+          grid-area: logo;
+        }
+
+        &__address {
+          grid-area: address;
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+
+        &__navigation {
+          grid-area: navigation;
+          justify-self: center;
+        }
+
+        &__social {
+          display: flex;
+          grid-area: social;
+        }
       }
 
-      &__burger-button {
+      .address__social {
         display: none;
       }
     }
+  }
+
+  &.--grid-type-4 {
+    @include container-up(header-container, $laptop-width) {
+      .container {
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: auto 1fr auto auto;
+        grid-template-areas:
+          "address logo social call"
+          "navigation navigation navigation navigation";
+      }
+
+      .header {
+        &__address {
+          grid-area: address;
+          flex-direction: column;
+          padding: 0;
+          border: none;
+        }
+
+        &__logo {
+          grid-area: logo;
+          justify-self: center;
+        }
+
+        &__social {
+          grid-area: social;
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        &__call-button {
+          grid-area: call;
+        }
+
+        &__navigation {
+          width: 100%;
+          grid-area: navigation;
+          border-top: 1px solid var(--light-color);
+
+          .navigation__list {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+
+      .address__social {
+        display: none;
+      }
+    }
+  }
+
+  &.--sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--white-color);
+    z-index: 40;
   }
 }

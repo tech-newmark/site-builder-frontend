@@ -1,7 +1,6 @@
-ul.social
-  li.social__item
-    a(class="social__link social__link--instagram" href="#" aria-label="Instagram")
-  li.social__item
-    a(class="social__link social__link--whatsapp" href="#" aria-label="WhatsApp")
-  li.social__item
-    a(class="social__link social__link--telegram" href="#" aria-label="Telegram")
+mixin social(data)
+
+  ul(class=["social", data.class])
+    each item in data.items
+      li.social__item
+        a(class=`social__link social__link--${item.modifier}` href!=data.link aria-label!= item.social)
