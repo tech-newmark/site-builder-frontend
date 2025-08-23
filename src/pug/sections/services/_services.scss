@@ -62,16 +62,13 @@ $service-card-scrollbar-border-radius: 30px;
       gap: var(--gap-lg);
 
       @include container-up("services-container", $laptop-width) {
-        .service-card {
+        .service-card__wrapper {
           flex-direction: row;
           gap: 64px;
+        }
 
-          &__section--image {
-            position: sticky;
-            top: 0;
-            height: fit-content;
-            margin: 0;
-          }
+        .service-card__section--image {
+          margin: 0;
         }
       }
     }
@@ -79,9 +76,20 @@ $service-card-scrollbar-border-radius: 30px;
     &.--grid-type-3 {
       @include container-up("services-container", $laptop-width) {
         .services__grid-item:nth-child(even) {
-          .service-card {
+          .service-card__wrapper {
             flex-direction: row-reverse;
           }
+        }
+      }
+    }
+
+    &.--grid-type-2.--sticky-img,
+    &.--grid-type-3.--sticky-img {
+      @include container-up("services-container", $laptop-width) {
+        .service-card__section--image {
+          position: sticky;
+          top: 0;
+          height: fit-content;
         }
       }
     }

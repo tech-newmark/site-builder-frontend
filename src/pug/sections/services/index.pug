@@ -12,7 +12,7 @@ block content
   include ../../components/_ui/cards/service-card/template
   include ./services-content.pug
 
-  .services__grid.--align-content-center.--grid-type-2
+  .services__grid.--grid-type-2
     each item in serviceContent
       .services__grid-item
         +service-card(item)

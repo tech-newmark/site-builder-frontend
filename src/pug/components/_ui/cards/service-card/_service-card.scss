@@ -9,193 +9,133 @@ $bold: 700;
 $service-card-gap: 16px;
 $service-card-padding: clamp(20px, 2.4vw, 24px);
 
-.service-card__container {
+.service-card {
   container: service-card-container / inline-size;
   height: 100%;
 
-  .service-card {
+  &__wrapper {
     position: relative;
     @extend %flex-column;
     height: 100%;
     padding: $service-card-padding;
     border: 1px solid transparent;
+  }
 
-    &__section--image {
-      margin-bottom: 32px;
-    }
+  &__section--image {
+    margin-bottom: 32px;
+  }
 
-    &__img {
-      width: 100%;
-      height: auto;
-      max-height: 320px;
-      object-fit: contain;
-    }
+  &__img {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+  }
 
-    &__section--content {
-      @extend %flex-column;
+  &__section--content {
+    @extend %flex-column;
+    gap: $service-card-gap;
+    flex-grow: 1;
+
+    &-top {
+      display: flex;
+      flex-direction: column;
       gap: $service-card-gap;
       flex-grow: 1;
+    }
+  }
 
-      &-top {
-        display: flex;
-        flex-direction: column;
-        gap: $service-card-gap;
-        flex-grow: 1;
+  &__header {
+    @extend %flex-column;
+    gap: $service-card-gap;
+
+    &-title {
+      margin: 0;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 64px;
+        height: 4px;
+        margin-top: 12px;
+        background-color: var(--primary-color);
       }
     }
 
-    &__header {
-      @extend %flex-column;
-      gap: $service-card-gap;
-
-      &-title {
-        margin: 0;
-
-        &::after {
-          content: "";
-          display: block;
-          width: 64px;
-          height: 4px;
-          margin-top: 12px;
-          background-color: var(--primary-color);
-        }
-      }
-
-      &-description {
-        margin: 0;
-      }
+    &-description {
+      margin: 0;
     }
+  }
 
-    &__body {
-      flex-grow: 1;
-    }
+  &__body {
+    flex-grow: 1;
+  }
 
-    &__footer {
-      @extend %flex-column;
-      gap: $service-card-gap;
+  &__footer {
+    @extend %flex-column;
+    gap: $service-card-gap;
 
-      &-price {
-        font-size: clamp(18px, 2.5cqw, 24px);
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: fit-content;
+    &-price {
+      font-size: clamp(18px, 2.5cqw, 24px);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: fit-content;
 
-        &-actual {
-          font-weight: $bold;
-        }
-
-        &-old {
-          text-decoration: line-through;
-        }
-
-        @include container-up("service-card-container", $mobile-width) {
-          flex-direction: row;
-        }
+      &-actual {
+        font-weight: $bold;
       }
 
-      &-button {
-        width: fit-content;
-        padding: 13px 28px;
-        font-size: 14px;
+      &-old {
+        text-decoration: line-through;
+      }
+
+      @include container-up("service-card-container", $mobile-width) {
+        flex-direction: row;
       }
     }
 
-    &.--bordered {
-      border: 1px solid var(--primary-color);
+    &-button {
+      width: fit-content;
+      padding: 13px 28px;
+      font-size: 14px;
     }
+  }
 
-    &.--rounded {
+  &.--bordered {
+    border: 1px solid var(--primary-color);
+  }
+
+  &.--rounded {
+    border-radius: var(--current-border-radius);
+  }
+
+  &.--image-rounded {
+    .service-card__img {
       border-radius: var(--current-border-radius);
     }
+  }
 
-    &.--image-rounded {
-      .service-card__img {
-        border-radius: var(--current-border-radius);
-      }
-    }
+  &.--overlayed-dark {
+    @include block-overlay("dark");
+  }
 
-    &.--overlayed-dark {
-      @include block-overlay("dark");
-    }
+  &.--overlayed-light {
+    @include block-overlay("light");
+  }
 
-    &.--overlayed-light {
-      @include block-overlay("light");
-    }
-
-    &.--overlayed-blured {
-      @include block-overlay("blured");
-    }
-
-    // &.--collapsed-content {
-    //   position: relative;
-    //   padding: 0;
-    //   overflow: hidden;
-
-    //   .service-card__section--image {
-    //     width: 100%;
-    //     height: 100%;
-    //     margin: 0;
-    //   }
-
-    //   .service-card__img {
-    //     height: 100%;
-    //     max-height: none;
-    //     object-fit: cover;
-    //   }
-
-    //   .service-card__section--content {
-    //     position: absolute;
-    //     padding: 20px;
-    //     // display: none;
-    //   }
-    // }
-
-    // &.--collapsed-content:not(.--bg-image) {
-    //   overflow: hidden;
-
-    // position: relative;
-    // overflow: hidden;
-
-    // .service-card__img {
-    //   display: none;
-    // }
-
-    // .service-card__section--content {
-    //   margin-top: auto;
-    // }
-
-    // .service-card__body {
-    //   max-height: 0;
-    //   opacity: 0;
-    //   overflow-y: auto;
-    //   scrollbar-gutter: stable;
-
-    //   will-change: opacity, max-height;
-    //   transition:
-    //     opacity var(--main-transition),
-    //     max-height var(--main-transition);
-    //   scrollbar-gutter: stable;
-
-    //   &::-webkit-scrollbar {
-    //     background-color: var(--scrollbar-color);
-    //     width: var(--scrollbar-width);
-    //     border-radius: var(--scrollbar-border-radius);
-    //   }
-
-    //   &::-webkit-scrollbar-thumb {
-    //     background-color: var(--scrollbar-thumb-color);
-    //     border-radius: var(--scrollbar-thumb-border-radius);
-    //   }
-    // }
-
-    // &:hover {
-    //   .service-card__body {
-    //     max-height: 200px;
-    //     opacity: 1;
-    //     overflow-y: auto;
-    //   }
-    // }
-    // }
+  &.--overlayed-blured {
+    @include block-overlay("blured");
   }
 }
+
+//   &::-webkit-scrollbar {
+//     background-color: var(--scrollbar-color);
+//     width: var(--scrollbar-width);
+//     border-radius: var(--scrollbar-border-radius);
+//   }
+
+//   &::-webkit-scrollbar-thumb {
+//     background-color: var(--scrollbar-thumb-color);
+//     border-radius: var(--scrollbar-thumb-border-radius);
+//   }
