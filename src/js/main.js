@@ -7,3 +7,4 @@ import "@pug/components/_ui/sliders/main-slider/script.js";
 import "./modules/table-wrapper";
 import "@pug/components/_ui/cards/review-card/script.js";
 import "@pug/layouts/header/script.js";
+// import "@pug/components/_ui/navigation/script.js";

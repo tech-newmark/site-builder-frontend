@@ -1,17 +1,15 @@
-const burgerButton = document.querySelector(".header__burger-button");
+const burgerButton = document.querySelector(".header__action-button--burger");
 const mobileMenu = document.querySelector(".header__mobile-menu");
 const mobileMenuContent = document.querySelector(
   ".header__mobile-menu-content"
 );
-const closeButton = document.querySelector(".header__mobile-menu-close-button");
+const closeButton = document.querySelector(".header__action-button--close");
 
-if (burgerButton) {
-  burgerButton.addEventListener("click", () => {
-    mobileMenu.style.zIndex = "40";
-    mobileMenu.style.opacity = "1";
-    mobileMenuContent.style.transform = "translateX(0)";
-  });
-}
+const openMobileMenu = () => {
+  mobileMenu.style.zIndex = "40";
+  mobileMenu.style.opacity = "1";
+  mobileMenuContent.style.transform = "translateX(0)";
+};
 
 const closeMobileMenu = () => {
   mobileMenuContent.style.transform = "translateX(-100vw)";
@@ -20,6 +18,10 @@ const closeMobileMenu = () => {
     mobileMenu.style.zIndex = "-1";
   }, 300);
 };
+
+if (burgerButton) {
+  burgerButton.addEventListener("click", () => openMobileMenu());
+}
 
 if (closeButton) {
   closeButton.addEventListener("click", () => closeMobileMenu());
