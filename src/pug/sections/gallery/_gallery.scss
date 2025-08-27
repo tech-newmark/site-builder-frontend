@@ -104,6 +104,18 @@
         max-width: 1120px;
       }
     }
+
+    .main-slider {
+      .swiper-wrapper {
+        padding-bottom: 5px;
+      }
+
+      .swiper-slide {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+      }
+    }
   }
 
   &.--gallery-img-bordered {
