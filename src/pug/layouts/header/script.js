@@ -1,42 +1,45 @@
-// const burgerButton = document.querySelector(".header__action-button--burger");
-// const mobileMenu = document.querySelector(".header__mobile-menu");
-// const mobileMenuContent = document.querySelector(
-//   ".header__mobile-menu-content"
-// );
-// const closeButton = document.querySelector(".header__action-button--close");
+import { gsap } from "gsap";
 
-// const openMobileMenu = () => {
-//   mobileMenu.style.display = "block";
-//   mobileMenu.style.opacity = "1";
-//   mobileMenu.style.zIndex = "40";
-//   mobileMenuContent.style.transform = "translateX(0)";
-// };
+const opener = document.querySelector(".header__action-button--burger");
+const closer = document.querySelector(".header__action-button--close");
+const menu = document.querySelector(".header__mobile-menu");
 
-// const closeMobileMenu = () => {
-//   mobileMenuContent.style.transform = "translateX(-100vw)";
-//   setTimeout(() => {
-//     mobileMenu.style.display = "none";
-//     mobileMenu.style.opacity = "0";
-//     mobileMenu.style.zIndex = "-1";
-//   }, 300);
-// };
+if (opener && closer && menu) {
+  const tl = gsap.timeline().pause();
 
-// if (burgerButton) {
-//   burgerButton.addEventListener("click", () => openMobileMenu());
-// }
+  tl.fromTo(
+    ".header__mobile-menu",
+    { opacity: 0 },
+    { display: "block", opacity: 1, duration: 0.3 }
+  );
+  tl.fromTo(
+    ".header__mobile-menu-content",
+    { x: "-100vw", opacity: 0 },
+    { opacity: 1, x: 0, duration: 0.3 },
+    "-=.2"
+  );
 
-// if (closeButton) {
-//   closeButton.addEventListener("click", () => closeMobileMenu());
-// }
+  const onClickOpenMenu = () => {
+    tl.play();
+    document.addEventListener("click", onOverlayClickHandler);
+    window.addEventListener("keydown", onEscClickHandler);
+  };
 
-// document.addEventListener("keydown", (evt) => {
-//   if (evt.key === "Escape") {
-//     closeMobileMenu();
-//   }
-// });
+  const onOverlayClickHandler = (evt) => {
+    if (evt.target.classList.contains("header__mobile-menu"))
+      onClickCloseMenu();
+  };
 
-// document.addEventListener("click", (evt) => {
-//   if (evt.target === mobileMenu) {
-//     closeMobileMenu();
-//   }
-// });
+  const onEscClickHandler = (evt) => {
+    if (evt.key === "Escape" || evt.code === 27) onClickCloseMenu();
+  };
+
+  const onClickCloseMenu = () => {
+    tl.reverse();
+    document.removeEventListener("click", onOverlayClickHandler);
+    window.removeEventListener("keydown", onEscClickHandler);
+  };
+
+  closer.addEventListener("click", onClickCloseMenu);
+  opener.addEventListener("click", onClickOpenMenu);
+}
