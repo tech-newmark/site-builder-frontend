@@ -21,14 +21,16 @@ $gap-lg: 32px;
   container: footer-container / inline-size;
 
   .container {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
+    // display: flex;
+    // flex-direction: column;
     gap: $gap-lg;
   }
 
   &__logo {
-    display: flex;
-    align-items: center;
+    @extend %flex-align;
+    // display: flex;
+    // align-items: center;
     gap: $gap-sm;
 
     &-image {
@@ -45,34 +47,38 @@ $gap-lg: 32px;
   }
 
   &__call-button {
-    font-size: 16px;
-    padding: 16px 28px;
     width: fit-content;
+    padding: 16px 28px;
     max-width: 200px;
+    font-size: 16px;
   }
 
   &__address {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
+    // display: flex;
+    // flex-direction: column;
     gap: $gap-md;
 
     .address__wrapper {
-      display: flex;
-      flex-direction: column;
+      @extend %flex-column;
+      // display: flex;
+      // flex-direction: column;
       gap: $gap-md;
     }
 
     .social {
-      display: flex;
-      flex-wrap: wrap;
+      @extend %flex-wrap;
+      // display: flex;
+      // flex-wrap: wrap;
       gap: $gap-md;
     }
   }
 
   &__navigation {
     .navigation__list {
-      display: flex;
-      flex-direction: column;
+      @extend %flex-column;
+      // display: flex;
+      // flex-direction: column;
       column-gap: $gap-lg;
       row-gap: $gap-md;
     }
@@ -83,8 +89,9 @@ $gap-lg: 32px;
     margin: 0;
     list-style-type: none;
 
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
+    // display: flex;
+    // flex-direction: column;
     column-gap: $gap-lg;
     row-gap: $gap-md;
   }
@@ -98,14 +105,16 @@ $gap-lg: 32px;
   }
 
   &__details {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
+    // display: flex;
+    // flex-direction: column;
     gap: $gap-md;
   }
 
   &__copyright {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
+    // display: flex;
+    // flex-direction: column;
     gap: $gap-md;
     width: 100%;
     padding-top: 32px;
@@ -181,7 +190,7 @@ $gap-lg: 32px;
         "address address hot-links details details"
         "copyright copyright copyright copyright copyright";
       gap: $gap-lg;
-      align-items: flex-start;
+      align-items: start;
     }
 
     .footer {
@@ -208,7 +217,7 @@ $gap-lg: 32px;
 
       &__hot-links-list {
         grid-area: hot-links;
-        align-self: flex-start;
+        align-self: start;
       }
 
       &__hot-links-item {
@@ -355,8 +364,10 @@ $gap-lg: 32px;
 
         &__social {
           grid-area: social;
-          display: flex;
-          align-self: center;
+
+          @extend %flex-align;
+          // display: flex;
+          // align-self: center;
           justify-self: end;
           gap: $gap-md;
         }
