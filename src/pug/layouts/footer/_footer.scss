@@ -21,16 +21,16 @@ $gap-lg: 32px;
   container: footer-container / inline-size;
 
   .container {
-    @extend %flex-column;
-    // display: flex;
-    // flex-direction: column;
+    // @extend %flex-column;
+    display: flex;
+    flex-direction: column;
     gap: $gap-lg;
   }
 
   &__logo {
-    @extend %flex-align;
-    // display: flex;
-    // align-items: center;
+    // @extend %flex-align;
+    display: flex;
+    align-items: center;
     gap: $gap-sm;
 
     &-image {
@@ -54,31 +54,31 @@ $gap-lg: 32px;
   }
 
   &__address {
-    @extend %flex-column;
-    // display: flex;
-    // flex-direction: column;
+    // @extend %flex-column;
+    display: flex;
+    flex-direction: column;
     gap: $gap-md;
 
     .address__wrapper {
-      @extend %flex-column;
-      // display: flex;
-      // flex-direction: column;
+      // @extend %flex-column;
+      display: flex;
+      flex-direction: column;
       gap: $gap-md;
     }
 
     .social {
-      @extend %flex-wrap;
-      // display: flex;
-      // flex-wrap: wrap;
+      // @extend %flex-wrap;
+      display: flex;
+      flex-wrap: wrap;
       gap: $gap-md;
     }
   }
 
   &__navigation {
     .navigation__list {
-      @extend %flex-column;
-      // display: flex;
-      // flex-direction: column;
+      // @extend %flex-column;
+      display: flex;
+      flex-direction: column;
       column-gap: $gap-lg;
       row-gap: $gap-md;
     }
@@ -89,9 +89,9 @@ $gap-lg: 32px;
     margin: 0;
     list-style-type: none;
 
-    @extend %flex-column;
-    // display: flex;
-    // flex-direction: column;
+    // @extend %flex-column;
+    display: flex;
+    flex-direction: column;
     column-gap: $gap-lg;
     row-gap: $gap-md;
   }
@@ -105,16 +105,16 @@ $gap-lg: 32px;
   }
 
   &__details {
-    @extend %flex-column;
-    // display: flex;
-    // flex-direction: column;
+    // @extend %flex-column;
+    display: flex;
+    flex-direction: column;
     gap: $gap-md;
   }
 
   &__copyright {
-    @extend %flex-column;
-    // display: flex;
-    // flex-direction: column;
+    // @extend %flex-column;
+    display: flex;
+    flex-direction: column;
     gap: $gap-md;
     width: 100%;
     padding-top: 32px;
@@ -365,9 +365,9 @@ $gap-lg: 32px;
         &__social {
           grid-area: social;
 
-          @extend %flex-align;
-          // display: flex;
-          // align-self: center;
+          // @extend %flex-align;
+          display: flex;
+          align-self: center;
           justify-self: end;
           gap: $gap-md;
         }
