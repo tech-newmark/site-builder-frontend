@@ -1,4 +1,5 @@
-const laptopWidth = 1024;
+const LAPTOP_WIDTH = 1024;
+let wasMobile = window.innerWidth < LAPTOP_WIDTH;
 
 import { gsap } from "gsap";
 
@@ -25,12 +26,14 @@ if (opener && closer && menu) {
     tl.play();
     document.addEventListener("click", onOverlayClickHandler);
     window.addEventListener("keydown", onEscClickHandler);
+    window.addEventListener("resize", handleResize);
   };
 
   const closeMenu = () => {
     tl.reverse();
     document.removeEventListener("click", onOverlayClickHandler);
     window.removeEventListener("keydown", onEscClickHandler);
+    window.removeEventListener("resize", handleResize);
   };
 
   const onClickCloseMenu = () => {
@@ -49,11 +52,13 @@ if (opener && closer && menu) {
     }
   };
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth === laptopWidth) {
+  const handleResize = () => {
+    const isMobile = window.innerWidth < LAPTOP_WIDTH;
+    if (wasMobile && !isMobile) {
       closeMenu();
     }
-  });
+    wasMobile = isMobile;
+  };
 
   closer.addEventListener("click", onClickCloseMenu);
   opener.addEventListener("click", onClickOpenMenu);
