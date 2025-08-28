@@ -20,8 +20,9 @@ $gap-lg: 32px;
   container: header-container / inline-size;
 
   .container {
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
+    @extend %flex-wrap;
     align-items: center;
     justify-content: space-between;
     gap: $gap-lg;
@@ -35,8 +36,9 @@ $gap-lg: 32px;
   }
 
   &__logo {
-    display: flex;
-    align-items: center;
+    @extend %flex-wrap;
+    // display: flex;
+    // align-items: center;
     gap: $gap-sm;
 
     &-image {
@@ -53,9 +55,10 @@ $gap-lg: 32px;
   }
 
   &__action-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %flex-center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     width: 40px;
     aspect-ratio: 1;
     padding: 0;
@@ -81,28 +84,29 @@ $gap-lg: 32px;
   }
 
   &__mobile-menu {
-    display: none;
+    // display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-    opacity: 0;
+    // z-index: -1;
+    // opacity: 0;
     transition: opacity var(--slow-transition);
 
     &-content {
-      display: flex;
-      flex-direction: column;
+      @extend %flex-column;
+      // display: flex;
+      // flex-direction: column;
       gap: $gap-md;
       position: fixed;
       height: 100vh;
-      padding: 8px var(--container-offset);
+      padding: 8px 20px;
       background-color: var(--white-color);
       width: 100%;
       max-width: 440px;
-      transform: translateX(-100vw);
+      // transform: translateX(-100vw);
       transition: transform var(--slow-transition);
     }
 
@@ -121,8 +125,9 @@ $gap-lg: 32px;
 
     .header__navigation--mobile-menu {
       .navigation__list {
-        display: flex;
-        flex-direction: column;
+        @extend %flex-column;
+        // display: flex;
+        // flex-direction: column;
         gap: $gap-md;
       }
       .navigation__item-nested {
@@ -131,20 +136,23 @@ $gap-lg: 32px;
     }
 
     .header__address--mobile-menu {
-      display: flex;
-      flex-direction: column;
+      @extend %flex-column;
+      // display: flex;
+      // flex-direction: column;
       margin-top: auto;
       gap: $gap-md;
 
       .address__wrapper {
-        display: flex;
-        flex-direction: column;
+        @extend %flex-column;
+        // display: flex;
+        // flex-direction: column;
         gap: $gap-md;
       }
 
       .address__social {
-        display: flex;
-        flex-wrap: wrap;
+        @extend %flex-wrap;
+        // display: flex;
+        // flex-wrap: wrap;
         gap: $gap-md;
       }
     }
@@ -169,56 +177,63 @@ $gap-lg: 32px;
       column-gap: $gap-lg;
     }
 
-    &__logo {
-      grid-area: logo;
-    }
+    .header {
+      &__logo {
+        grid-area: logo;
+      }
 
-    &__address {
-      grid-area: address;
-      display: flex;
-      flex-wrap: wrap;
-      row-gap: $gap-xs;
-      column-gap: $gap-md;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--light-color);
-
-      .address__wrapper {
-        display: flex;
-        flex-wrap: wrap;
+      &__address--main {
+        grid-area: address;
+        @extend %flex-wrap;
+        // display: flex;
+        // flex-wrap: wrap;
+        row-gap: $gap-xs;
         column-gap: $gap-md;
-        row-gap: $gap-xs;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--light-color);
+
+        .address__wrapper {
+          @extend %flex-wrap;
+          // display: flex;
+          // flex-wrap: wrap;
+          column-gap: $gap-md;
+          row-gap: $gap-xs;
+        }
+
+        .address__social {
+          @extend %flex-wrap;
+          // display: flex;
+          // flex-wrap: wrap;
+          column-gap: $gap-md;
+          row-gap: $gap-xs;
+        }
       }
 
-      .address__social {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: $gap-md;
-        row-gap: $gap-xs;
+      &__navigation--main {
+        display: block;
+
+        .navigation__list {
+          @extend %flex-wrap;
+          // display: flex;
+          // flex-wrap: wrap;
+          column-gap: $gap-lg;
+          row-gap: $gap-xs;
+        }
       }
-    }
 
-    &__navigation {
-      display: block;
-      .navigation__list {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: $gap-lg;
-        row-gap: $gap-xs;
+      &__call-button--main {
+        grid-area: call;
       }
-    }
 
-    &__call-button--main {
-      grid-area: call;
-    }
+      &__action-button--burger {
+        display: none;
+      }
 
-    &__action-button--burger {
-      display: none;
-    }
-
-    &__mobile-menu {
-      display: none;
+      &__mobile-menu {
+        display: none;
+      }
     }
   }
 
@@ -233,7 +248,7 @@ $gap-lg: 32px;
         row-gap: $gap-md;
         column-gap: $gap-lg;
 
-        justify-items: left;
+        justify-items: start;
       }
 
       .header {
@@ -241,7 +256,7 @@ $gap-lg: 32px;
           grid-area: logo;
         }
 
-        &__address {
+        &__address--main {
           grid-area: address;
           padding-bottom: 0;
           border-bottom: none;
@@ -258,8 +273,9 @@ $gap-lg: 32px;
 
         &__social {
           grid-area: social;
-          display: flex;
-          flex-wrap: wrap;
+          @extend %flex-wrap;
+          // display: flex;
+          // flex-wrap: wrap;
           gap: $gap-md;
         }
       }
@@ -301,8 +317,9 @@ $gap-lg: 32px;
 
         &__social {
           grid-area: social;
-          display: flex;
-          flex-wrap: wrap;
+          @extend %flex-wrap;
+          // display: flex;
+          // flex-wrap: wrap;
           gap: $gap-md;
         }
       }
@@ -320,9 +337,11 @@ $gap-lg: 32px;
       }
 
       .header {
-        &__address {
+        &__address--main {
           grid-area: address;
-          flex-direction: column;
+          @extend %flex-column;
+          // flex-direction: column;
+          // align-items: flex-start;
           align-items: flex-start;
           padding: 0;
           border: none;
@@ -339,8 +358,9 @@ $gap-lg: 32px;
 
         &__social {
           grid-area: social;
-          display: flex;
-          flex-wrap: wrap;
+          @extend %flex-wrap;
+          // display: flex;
+          // flex-wrap: wrap;
           gap: $gap-md;
         }
 
