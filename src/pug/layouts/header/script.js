@@ -1,3 +1,5 @@
+const laptopWidth = 1024;
+
 import { gsap } from "gsap";
 
 const opener = document.querySelector(".header__action-button--burger");
@@ -25,20 +27,33 @@ if (opener && closer && menu) {
     window.addEventListener("keydown", onEscClickHandler);
   };
 
-  const onOverlayClickHandler = (evt) => {
-    if (evt.target.classList.contains("header__mobile-menu"))
-      onClickCloseMenu();
-  };
-
-  const onEscClickHandler = (evt) => {
-    if (evt.key === "Escape" || evt.code === 27) onClickCloseMenu();
-  };
-
-  const onClickCloseMenu = () => {
+  const closeMenu = () => {
     tl.reverse();
     document.removeEventListener("click", onOverlayClickHandler);
     window.removeEventListener("keydown", onEscClickHandler);
   };
+
+  const onClickCloseMenu = () => {
+    closeMenu();
+  };
+
+  const onEscClickHandler = (evt) => {
+    if (evt.key === "Escape") {
+      closeMenu();
+    }
+  };
+
+  const onOverlayClickHandler = (evt) => {
+    if (evt.target.classList.contains("header__mobile-menu")) {
+      closeMenu();
+    }
+  };
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth === laptopWidth) {
+      closeMenu();
+    }
+  });
 
   closer.addEventListener("click", onClickCloseMenu);
   opener.addEventListener("click", onClickOpenMenu);
