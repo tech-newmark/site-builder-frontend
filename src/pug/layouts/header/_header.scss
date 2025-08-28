@@ -76,7 +76,7 @@ $gap-lg: 32px;
     }
   }
 
-  &__address,
+  &__address--main,
   &__social,
   &__navigation--main,
   &__call-button--main {
@@ -300,7 +300,7 @@ $gap-lg: 32px;
           grid-area: logo;
         }
 
-        &__address {
+        &__address--main {
           grid-area: address;
           padding-bottom: 0;
           border-bottom: none;
