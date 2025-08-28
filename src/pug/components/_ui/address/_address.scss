@@ -1,11 +1,14 @@
+$content-gap: 8px;
+
 .address {
+  font-size: 14px;
+
   &__location,
   &__phone,
   &__email {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
+    gap: $content-gap;
 
     &::before {
       content: "";
@@ -29,13 +32,5 @@
 
   &__phone::before {
     background-image: url("@img/phone.svg");
-  }
-
-  &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    row-gap: 8px;
-    column-gap: 16px;
   }
 }

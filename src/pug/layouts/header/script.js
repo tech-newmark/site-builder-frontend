@@ -6,14 +6,16 @@ const mobileMenuContent = document.querySelector(
 const closeButton = document.querySelector(".header__action-button--close");
 
 const openMobileMenu = () => {
-  mobileMenu.style.zIndex = "40";
+  mobileMenu.style.display = "block";
   mobileMenu.style.opacity = "1";
+  mobileMenu.style.zIndex = "40";
   mobileMenuContent.style.transform = "translateX(0)";
 };
 
 const closeMobileMenu = () => {
   mobileMenuContent.style.transform = "translateX(-100vw)";
   setTimeout(() => {
+    mobileMenu.style.display = "none";
     mobileMenu.style.opacity = "0";
     mobileMenu.style.zIndex = "-1";
   }, 300);
