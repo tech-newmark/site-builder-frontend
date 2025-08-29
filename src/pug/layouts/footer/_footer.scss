@@ -9,6 +9,7 @@
 @use "@pug/components/_ui/address/address";
 @use "@pug/components/_ui/social/social";
 @use "@pug/components/_ui/details/details";
+@use "@pug/components/_ui/logos/logo";
 
 $gap-xs: 4px;
 $gap-sm: 8px;
@@ -28,22 +29,7 @@ $gap-lg: 32px;
   }
 
   &__logo {
-    // @extend %flex-align;
-    display: flex;
-    align-items: center;
     gap: $gap-sm;
-
-    &-image {
-      width: 40px;
-      height: 40px;
-      fill: var(--primary-color);
-    }
-
-    &-text {
-      width: 84px;
-      height: 39px;
-      fill: var(--black-color);
-    }
   }
 
   &__call-button {
@@ -433,7 +419,7 @@ $gap-lg: 32px;
       color: var(--white-color);
     }
 
-    .footer__logo-text {
+    & .logo__text {
       fill: var(--white-color);
     }
   }
