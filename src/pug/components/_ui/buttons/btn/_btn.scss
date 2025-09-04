@@ -1,51 +1,54 @@
 @forward "@styles/_extends/flexbox";
 @forward "@styles/_extends/effects";
 %btn {
-	@extend %flex-align;
+  @extend %flex-align;
 
-	justify-content: center;
-	gap: 6px;
+  justify-content: center;
+  gap: 6px;
 
-	// width: fit-content;
-	min-width: 180px;
-	min-height: 48px;
-	font-size: clamp(18px, 2.4vw, 22px);
-	line-height: 1;
-	font-weight: 500;
-	padding: 12px 24px;
-	border: 2px solid transparent;
-	border-radius: var(--current-border-radius);
-	transition: color var(--main-transition),
-		background-color var(--main-transition), border-color var(--main-transition),
-		opacity var(--main-transition);
+  // width: fit-content;
+  min-width: 180px;
+  min-height: 48px;
+  font-size: clamp(18px, 2.4vw, 22px);
+  font-family: var(--site-base-font-family);
+  line-height: 1;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: 2px solid transparent;
+  border-radius: var(--current-border-radius);
+  transition:
+    color var(--main-transition),
+    background-color var(--main-transition),
+    border-color var(--main-transition),
+    opacity var(--main-transition);
 
-	@extend %base-hover-effect;
+  @extend %base-hover-effect;
 
-	span {
-		line-height: 1;
-	}
+  span {
+    line-height: 1;
+  }
 
-	svg {
-		transition: fill var(--main-transition);
-	}
+  svg {
+    transition: fill var(--main-transition);
+  }
 
-	&.--rounded-none {
-		border-radius: 0;
-	}
+  &.--rounded-none {
+    border-radius: 0;
+  }
 
-	&.--rounded-xs {
-		border-radius: var(--border-radius-xs);
-	}
+  &.--rounded-xs {
+    border-radius: var(--border-radius-xs);
+  }
 
-	&.--rounded-sm {
-		border-radius: var(--border-radius-sm);
-	}
+  &.--rounded-sm {
+    border-radius: var(--border-radius-sm);
+  }
 
-	&.--rounded-md {
-		border-radius: var(--border-radius-md);
-	}
+  &.--rounded-md {
+    border-radius: var(--border-radius-md);
+  }
 
-	&.--rounded-lg {
-		border-radius: var(--border-radius-lg);
-	}
+  &.--rounded-lg {
+    border-radius: var(--border-radius-lg);
+  }
 }

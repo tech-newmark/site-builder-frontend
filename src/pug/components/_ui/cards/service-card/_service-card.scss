@@ -1,0 +1,141 @@
+@forward "@styles/_extends/flexbox";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_vars/scoped" as *;
+@use "@styles/_mixins/block-overlay" as *;
+
+$semiBold: 600;
+$bold: 700;
+$service-card-gap: 16px;
+$service-card-padding: clamp(20px, 2.4vw, 24px);
+
+.service-card {
+  container: service-card-container / inline-size;
+  height: 100%;
+
+  &__wrapper {
+    position: relative;
+    @extend %flex-column;
+    height: 100%;
+    padding: $service-card-padding;
+    border: 1px solid transparent;
+  }
+
+  &__section--image {
+    margin-bottom: 32px;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+  }
+
+  &__section--content {
+    @extend %flex-column;
+    gap: $service-card-gap;
+    flex-grow: 1;
+
+    &-top {
+      display: flex;
+      flex-direction: column;
+      gap: $service-card-gap;
+      flex-grow: 1;
+    }
+  }
+
+  &__header {
+    @extend %flex-column;
+    gap: $service-card-gap;
+
+    &-title {
+      margin: 0;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 64px;
+        height: 4px;
+        margin-top: 12px;
+        background-color: var(--primary-color);
+      }
+    }
+
+    &-description {
+      margin: 0;
+    }
+  }
+
+  &__body {
+    flex-grow: 1;
+  }
+
+  &__footer {
+    @extend %flex-column;
+    gap: $service-card-gap;
+
+    &-price {
+      font-size: clamp(18px, 2.5cqw, 24px);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: fit-content;
+
+      &-actual {
+        font-weight: $bold;
+      }
+
+      &-old {
+        text-decoration: line-through;
+      }
+
+      @include container-up("service-card-container", $mobile-width) {
+        flex-direction: row;
+      }
+    }
+
+    &-button {
+      width: fit-content;
+      padding: 13px 28px;
+      font-size: 14px;
+    }
+  }
+
+  &.--bordered {
+    border: 1px solid var(--primary-color);
+  }
+
+  &.--rounded {
+    border-radius: var(--current-border-radius);
+  }
+
+  &.--image-rounded {
+    .service-card__img {
+      border-radius: var(--current-border-radius);
+    }
+  }
+
+  &.--overlayed-dark {
+    @include block-overlay("dark");
+  }
+
+  &.--overlayed-light {
+    @include block-overlay("light");
+  }
+
+  &.--overlayed-blured {
+    @include block-overlay("blured");
+  }
+}
+
+//   &::-webkit-scrollbar {
+//     background-color: var(--scrollbar-color);
+//     width: var(--scrollbar-width);
+//     border-radius: var(--scrollbar-border-radius);
+//   }
+
+//   &::-webkit-scrollbar-thumb {
+//     background-color: var(--scrollbar-thumb-color);
+//     border-radius: var(--scrollbar-thumb-border-radius);
+//   }

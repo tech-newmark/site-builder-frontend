@@ -1,0 +1,18 @@
+extends ../../layouts/base-section/template
+
+
+
+
+block variables
+  - sectionClass = 'services'
+  - sectionTitle = 'Наши услуги'
+  - sectionText = 'Наша команда опытных дизайнеров интерьеров помогает воплотить ваши идеи в жизнь. Мы создаем стильные и функциональные пространства, которые отражают вашу индивидуальность.'
+
+block content
+  include ../../components/_ui/cards/service-card/template
+  include ./services-content.pug
+
+  .services__grid.--grid-type-2
+    each item in serviceContent
+      .services__grid-item
+        +service-card(item)

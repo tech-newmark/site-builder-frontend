@@ -1,0 +1,28 @@
+include ../../buttons/btn/btn
+
+mixin service-card(data)
+
+
+  article.service-card
+    .service-card__wrapper
+      .service-card__section.service-card__section--image
+        img(class="service-card__img" src=`./assets/img/${data.img.src}` alt!=data.img.alt width="668" height="320")
+      .service-card__section.service-card__section--content
+        .service-card__section--content-top
+          .service-card__header
+            span.service-card__header-title.base-subtitle!=data.title
+            p.service-card__header-description!=data.description
+          .service-card__body!= data.content
+        .service-card__footer
+          p.service-card__footer-price
+            span.service-card__footer-price-old!=data.price.old
+            span.service-card__footer-price-actual!=data.price.actual
+
+          +btn({
+          tag: "button",
+          type: "button",
+          cls: "service-card__footer-button btn-primary",
+          title: "Заказать консультацию",
+          })
+
+
