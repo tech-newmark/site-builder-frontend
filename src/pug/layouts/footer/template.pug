@@ -1,2 +1,38 @@
-footer.footer
-  span Footer
+include ../../components/_ui/navigation/navigation
+include ../../components/_ui/buttons/btn/btn
+include ../../components/_ui/address/address
+include ../../components/_ui/social/social
+include ../../components/_ui/logos/logo
+include ../../components/_ui/details/details
+
+footer.footer.--mobile-content-align-center.--bg-dark.--grid-type-4
+  .container
+    +logo({class:"footer__logo"})
+    +btn({tag: "button",
+      type: "button",
+        cls: "btn-primary footer__call-button",
+        title: "Заказать звонок"})
+    +address({
+      class: "footer__address",
+      city: "г. Санкт-Петербург",
+      phone: "8 999 999 99 99",
+      email: "info@test.ru"})
+
+    +nav({class: "footer__navigation"})
+
+    ul.footer__hot-links-list
+      each item in [1,2,3,4,5,6,7,8]
+        li.footer__hot-links-item
+          a(class="footer__hot-links-link" href="#") Ссылка
+
+    +details({class: "footer__details"})
+    +social({
+      class: "footer__social",
+      items: [
+        { social: "Instagram", modifier: "instagram", link: "#" },
+        { social: "WhatsApp", modifier: "whatsapp", link: "#" },
+        { social: "Telegram", modifier: "telegram", link: "#" }
+    ]})
+    .footer__copyright
+      span.footer__copyright-text © 2025. Все права защищены.
+      a(class="footer__copyright-link" href="#") Политика конфиденциальности

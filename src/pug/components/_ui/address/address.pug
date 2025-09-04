@@ -1,0 +1,15 @@
+include ../social/social
+
+mixin address(data)
+  address(class=["address", data && data.class])
+    span.address__location!=data.city
+    .address__wrapper
+      a.address__phone(href="tel:+79999999999")!=data.phone
+      a.address__email(href="mailto:info@test.ru")!=data.email
+    +social({
+        class: "address__social",
+        items: [
+          { social: "Instagram", modifier: "instagram", link: "#" },
+          { social: "WhatsApp", modifier: "whatsapp", link: "#" },
+          { social: "Telegram", modifier: "telegram", link: "#" }
+        ]})

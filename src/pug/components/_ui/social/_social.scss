@@ -1,0 +1,34 @@
+@forward "@styles/_extends/flexbox";
+@forward "@styles/_extends/effects";
+@forward "@styles/_extends/resets";
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.social {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &__link {
+    display: block;
+    width: 24px;
+    aspect-ratio: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @extend %base-hover-effect;
+
+    &--instagram {
+      background-image: url("@assets/img/instagram.svg");
+    }
+
+    &--telegram {
+      background-image: url("@assets/img/telegram.svg");
+    }
+
+    &--whatsapp {
+      background-image: url("@assets/img/whatsapp.svg");
+    }
+  }
+}

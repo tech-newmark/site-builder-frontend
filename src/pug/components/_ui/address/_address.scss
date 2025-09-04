@@ -1,0 +1,36 @@
+$content-gap: 8px;
+
+.address {
+  font-size: 14px;
+
+  &__location,
+  &__phone,
+  &__email {
+    display: flex;
+    align-items: center;
+    gap: $content-gap;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 24px;
+      aspect-ratio: 1;
+
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  &__location::before {
+    background-image: url("@img/location.svg");
+  }
+
+  &__email::before {
+    background-image: url("@img/email.svg");
+  }
+
+  &__phone::before {
+    background-image: url("@img/phone.svg");
+  }
+}

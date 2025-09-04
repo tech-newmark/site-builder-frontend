@@ -1,2 +1,51 @@
-header.header
-  span Header
+include ../../components/_ui/navigation/navigation
+include ../../components/_ui/buttons/btn/btn
+include ../../components/_ui/address/address
+include ../../components/_ui/logos/logo
+include ../../components/_ui/social/social
+
+
+header.header.--grid-type-.--sticky-header
+  .container
+    +logo({class:"header__logo"})
+    +address({
+      class: "header__address header__address--main",
+      city: "г. Санкт-Петербург",
+      phone: "8 999 999 99 99",
+      email: "info@test.ru"})
+
+    +social({
+      class: "header__social",
+      items: [
+        { social: "Instagram", modifier: "instagram", link: "#" },
+        { social: "WhatsApp", modifier: "whatsapp", link: "#" },
+        { social: "Telegram", modifier: "telegram", link: "#" }
+      ]})
+
+    +nav({class: "header__navigation header__navigation--main"})
+
+    +btn({tag: "button",
+      type: "button",
+      cls: "btn-primary header__call-button header__call-button--main",
+      title: "Заказать звонок"})
+
+    button.header__action-button.header__action-button--burger(type="button" aria-label="Открыть меню сайта")
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hiddent="true" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.5 17.6345V16.1347H20.5V17.6345H3.5ZM3.5 12.75V11.25H20.5V12.75H3.5ZM3.5 7.86523V6.36548H20.5V7.86523H3.5Z"/>
+      </svg>
+    .header__mobile-menu
+      .header__mobile-menu-content
+        .header__mobile-menu-top-wrapper
+          +logo({class:"header__logo"})
+          button.header__action-button.header__action-button--close(type="button" aria-label="Закрыть меню сайта")
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hiddent="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z"/>
+            </svg>
+        +nav({class: "header__navigation header__navigation--mobile-menu"})
+        +address({class: "header__address header__address--mobile-menu", city: "г. Санкт-Петербург", phone: "8 999 999 99 99", email: "info@test.ru"})
+        +btn({tag: "button",
+          type: "button",
+          cls: "btn-primary header__call-button",
+          title: "Заказать звонок"})
+
+
