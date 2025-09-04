@@ -14,6 +14,11 @@ mixin main-slider (data)
 
             if data.type === 'review-card-slider'
               +review-card(item, index)(class=  data.itemsModifiers ? data.itemsModifiers : null)
+
+            if data.type === 'gallery-slider'
+              img(class=["gallery-preview__img"] src=`./assets/img/${item.img}` alt=item.alt width="416" height="416" data-fancybox="gallery")
+
+
             //- .staff-preview-card.--bordered.--rounded.--content-align-center.--bordered.--circle-view-pictue.--algn-center
             //-   .staff-preview-card__picture
             //-     img(src=`./assets/img/${item.img}` alt="staff-preview-card" width="400" height="300")

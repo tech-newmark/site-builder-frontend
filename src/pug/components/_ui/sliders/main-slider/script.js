@@ -39,6 +39,17 @@ if (sliders.length) {
               : 20,
         },
       };
+    } else if (slider.classList.contains("gallery-slider")) {
+      return {
+        680: {
+          slidesPerView: 2,
+          spaceBetween: 32,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 32,
+        },
+      };
     }
   };
 
